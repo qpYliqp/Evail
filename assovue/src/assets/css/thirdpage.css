@@ -1,0 +1,54 @@
+
+.third_page {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    color: black;
+    height: 70vh;
+
+
+}
+
+
+.third_page_swiper_container
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+
+}
+
+/*.swiper-button-next, .swiper-button-prev {*/
+/*    position: static !important; !* Annule le positionnement absolu *!*/
+/*    width: auto !important; !* Annule la largeur par défaut *!*/
+/*    height: auto !important; !* Annule la hauteur par défaut *!*/
+/*    margin-top: 0 !important; !* Annule le marges par défaut *!*/
+/*    z-index: auto !important; !* Réinitialise le z-index *!*/
+/*    color: var(--primary-color);*/
+/*    padding: 5vw;*/
+
+/*}*/
+
+.swiper-button-next-1, .swiper-button-prev-1 {
+    position: static !important; /* Annule le positionnement absolu */
+    width: auto !important; /* Annule la largeur par défaut */
+    height: auto !important; /* Annule la hauteur par défaut */
+    margin-top: 0 !important; /* Annule le marges par défaut */
+    z-index: auto !important; /* Réinitialise le z-index */
+    color: var(--primary-color);
+    padding: 5vw;
+
+}
+
+.second_page_image img {
+    position: relative;
+    width: 100%; /* Conserve le ratio d'aspect */
+    height: 100%; /* S'adapte à la hauteur du conteneur */
+    max-width: 100%; /* Ne dépasse pas la largeur disponible */
+    z-index: 1; /* L'image doit rester au-dessus du cercle */
+
+
+}
