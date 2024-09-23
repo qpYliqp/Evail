@@ -14,6 +14,8 @@ import {onMounted, ref} from "vue";
 import '../assets/css/firstpage.css';
 import '../assets/css/secondpage.css';
 import '../assets/css/thirdpage.css';
+import '../assets/css/fourthpage.css';
+import '../assets/css/sixthpage.css';
 
 
 export default defineComponent({
@@ -35,9 +37,9 @@ export default defineComponent({
 
     const initMate = () =>
     {
-      let Anne = new Mate("Anne","/assets/images/mates/anne.png", "Anne est la fondatrice et la directrice de l'association. Ancienne bio-esthéticienne, elle s'est reconvertie en tant que infirmière. ", "L'humain est au cœur de nos professions,nous restons donc des soignants, non des gens spéciaux " )
+      let Anne = new Mate("Annie","/assets/images/mates/anne.png", "Anne est la fondatrice et la directrice de l'association. Ancienne bio-esthéticienne, elle s'est reconvertie en tant que infirmière. ", "L'humain est au cœur de nos professions,nous restons donc des soignants, non des gens spéciaux " )
       let Yaye = new Mate("Yaye","/assets/images/mates/yaye.png", "Yaye est la co-directice de l'association. Certifiée en pratique snoezelen et diplômée d'état d'accompagnant éducatif.", "Nos actions ne sont pas des vacances encore moins du tourisme ou des parties de rigolades, même si la bonne humeur nous accompagne! C'est un engagement de l'âme, nous donnons un peu de nous même à chaque voyage." )
-      let Minette = new Mate("Minette","/assets/images/mates/minette.png", "Minette est la trésorière de l'association. Exerçant en tant qu'aide-soignante en soins palliatifs. ", "J'ai décidé d'être heureux car c'est bon pour la santé." )
+      let Minette = new Mate("Minette","/assets/images/mates/minette.png", "co-fondatrice et trésorière de l'association. Architecte d'intérieure et aide-soignante en soins palliatifs", "L'amour est un guide dans ma vie. Bien plus qu'une étincelle belle, douce et accomplie. Il m'a appris à me servir de ses ailes." )
       let Martine = new Mate("Martine Gomis","/assets/images/mates/martine.png", "Martine Gomis secrétaire de l'association, assistante spécialisée dans le milieu du handicap, et infirmière.", "Ensemble, vivons des moments uniques, grandissons chaque jour, pour offrir le meilleur à chacun." )
 
       mates.value.push(Anne)
@@ -52,17 +54,29 @@ export default defineComponent({
     {
         let first = "/assets/images/expo1.jpg"
         let second = "/assets/images/expo2.jpg"
+      let third = "/assets/images/projet5.jpg"
 
         expo.value.push(first)
         expo.value.push(second)
+        expo.value.push(third)
 
     }
+
+    const openPDF = () =>
+    {
+      window.open("/assets/pdf/RAPPORT-AMP-AEH.pdf")
+    }
+
+
     return {
       modules:[Navigation],
       mates,
-      expo
+      expo, openPDF
     }
+
+
   }
+
 })
 
 </script>
@@ -73,7 +87,7 @@ export default defineComponent({
     <div class="first_page">
       <div class="first_page_filter">
         <div class="first_page_information">
-          <img src="../assets/logo/logo1.png" style="width: 25vw; height:auto;margin-left: 10vw;">
+          <img src="../assets/logo/logo1.png" >
           <p>
             Evail | Humanitaire
           </p>
@@ -115,7 +129,7 @@ export default defineComponent({
     </div>
 
     <div class="third_page">
-      <div style="display: flex; flex-direction: column; justify-content: center; align-items: center;  width: 100vw; padding : 1vh; ">
+      <div class="third_page_title">
       <p class="second_page_title">Une équipe pluri-professionnelle</p>
       </div>
 
@@ -137,25 +151,16 @@ export default defineComponent({
           :slides-per-view="1"
           :space-between="50"
           :loop="true"
+          class="third_page_swiper"
           style="width: 80vw"
       >
         <swiper-slide v-for="mate in mates" :key="mate.name" style="justify-content: center; align-items: center;display:flex;">
           <div style="display: flex; flex-direction: column; justify-content: center; align-items: center; width: 100%; height: 100%;">
-            <p style="color: black; font-size: 2vw; margin-top: 5vh; user-select: none">{{mate.name}}</p>
-            <img :src="mate.imagePath" style="width: 10vw; height: 20vh; border-radius: 50%; margin-top: 5vh;">
+            <p class="third_page_swiper_name" >{{mate.name}}</p>
+            <img class="third_page_swiper_image" :src="mate.imagePath" >
 
-            <p style="color: black; font-size: 1.5vw; margin-top: 5vh;user-select: none">{{mate.description}}</p>
-            <p style="
-              color: black;
-              font-size: 1.5vw;
-              margin-top: 5vh;
-              font-style: italic;
-              position: relative;
-              padding: 1vw;
-              border-left: 5px solid var(--primary-color); /* Bordure pour style citation */
-              background: rgba(169, 40, 49, 0.1); /* Légère transparence pour fond */
-              user-select: none
-            ">
+            <p class="third_page_swiper_description" >{{mate.description}}</p>
+            <p class="third_page_swiper_citation" >
               &ldquo;{{ mate.citation }}&rdquo;
             </p>          </div>
         </swiper-slide>
@@ -189,12 +194,14 @@ export default defineComponent({
             <p class="fourth_page_paragraph">Animé par ce devoir, nous sommes aujourd’hui une équipe composée d’infirmiers, médecins, d’aides-soignants  et bien d'autres professionnels de la santé publique. </p>
             <p class="fourth_page_paragraph">Nous voyageons depuis peu et rencontrons les populations sur le terrain pour comprendre leurs enjeux sanitaires et les préoccupations des habitants. Nous partons pendant deux semaines, dans chaque ville, même les plus reculées où nous faisons de la prévention sur des pathologies propres aux pays confrontés aux développements  et soignons des maladies qui ne nécessitent pas d’interventions chirurgicales. </p>
             <p class="fourth_page_paragraph">A terme, nous souhaiterions en collaboration avec les localités, permettre aux pays d’avoir des clés nécessaires pour être auto-suffisants en matière de préventions et de dépistage .  Donc d’encourager les initiatives locales et pérenniser l’éducation thérapeutique reçue. </p>
+            <p class="fourth_page_plus" @click="openPDF" >En savoir plus</p>
             <div style="display: flex; flex-direction: row; align-items: center; justify-content: center">
               <div class="counter-container">
                 <div class="counter">
-                  <div class="digit">0</div>
-                  <div class="digit">0</div>
-                  <div class="digit">7</div>
+                  <div class="digit">1</div>
+                  <div class="digit">3</div>
+                  <div class="digit">3</div>
+                  <div class="digit">6</div>
                 </div>
                 <p>CONSULTATION</p>
               </div>
@@ -202,8 +209,9 @@ export default defineComponent({
               <div class="counter-container">
                 <div class="counter">
                   <div class="digit">0</div>
+                  <div class="digit">2</div>
+                  <div class="digit">5</div>
                   <div class="digit">0</div>
-                  <div class="digit">7</div>
                 </div>
                 <p>MÉDICAMENTS RÉCOLTÉS</p>
               </div>
@@ -212,11 +220,14 @@ export default defineComponent({
                 <div class="counter">
                   <div class="digit">0</div>
                   <div class="digit">0</div>
-                  <div class="digit">7</div>
+                  <div class="digit">3</div>
+                  <div class="digit">5</div>
                 </div>
                 <p>SOIGNANTS MOBILISÉS</p>
               </div>
             </div>
+
+
 
           </div>
 
@@ -290,9 +301,9 @@ export default defineComponent({
           <div class="event-text">Inde</div>
         </div>
       </div>
-      <div style="display: flex; flex-direction: row; width: 100vw; align-items: stretch">
+      <div style="display: flex; flex-direction: row; width: 100vw; align-items: center; justify-content: center">
         <div style="display: flex; flex-direction: row; flex: 2;">
-          <div style="flex: 0.5; background-color: var(--secondary-color); display : flex; justify-content: center; align-items: center; padding: 2vw">
+          <div class="disappear_on_mobile" style="flex: 0.5; background-color: var(--secondary-color); display : flex; justify-content: center; align-items: center; padding: 2vw">
             <p class="second_page_subtitle" style="color: white">Du Casamance aux parcelles de Dakar </p></div>
           <div class="second_page_text" style="flex: 1;color: black; display: flex; justify-content: center">
             <p class="second_page_paragraph">Ce premier voyage nous a permis d’être accueillies par les habitants des villages en collaboration avec l’association AMP présente sur place, le consulat général et les autorités du Sénégal.</p>
@@ -304,30 +315,30 @@ export default defineComponent({
 
         <div style="flex:1;">
 
-          <div style="display: flex; flex-direction: row">
+          <div style="display: flex; flex-direction: row; justify-content: center; align-items: center">
             <div style="display: flex; flex-direction: column; flex: 1">
-              <div style="height:25vh; background-color: #620D14">
+              <div class="big_image">
                 <img src="/assets/images/projet7.jpg" style="width: 100%; height: 100%; object-fit: cover;">
               </div>
-              <div style="height:20vh; background-color: purple">
+              <div class="little_image">
                 <img src="/assets/images/projet2.jpg" style="width: 100%; height: 100%; object-fit: cover;">
               </div>
             </div>
 
             <div style="display: flex; flex-direction: column; flex: 1">
-              <div style="height:20vh; background-color: black">
+              <div class="little_image">
                 <img src="/assets/images/projet3.jpg" style="width: 100%; height: 100%; object-fit: cover;">
               </div>
-              <div style="height:25vh; background-color: purple">
+              <div class="big_image" >
                 <img src="/assets/images/projet4.jpg" style="width: 100%; height: 100%; object-fit: cover;">
               </div>
             </div>
 
             <div style="display: flex; flex-direction: column; flex: 1">
-              <div style="height:22.5vh; background-color: black">
+              <div class="middle_image" >
                 <img src="/assets/images/projet5.jpg" style="width: 100%; height: 100%; object-fit: cover;">
               </div>
-              <div style="height:22.5vh; background-color: purple">
+              <div class="middle_image">
                 <img src="/assets/images/projet6.jpg" style="width: 100%; height: 100%; object-fit: cover;">
 
               </div>
@@ -345,16 +356,37 @@ export default defineComponent({
 
       <img src="/assets/images/logo2.png" style="width: 20vw; height: auto; margin-top: 2vh;margin-bottom: 2vh">
 
-      <a href="https://www.payasso.fr/association-evail-humanitaire/don" style=" background-color: var(--primary-color); text-decoration: none; display: block; padding: 10px; color: white; display: flex; flex-direction: column;
+      <a class="donate" href="https://www.payasso.fr/association-evail-humanitaire/don" style=" background-color: var(--primary-color); text-decoration: none; padding: 10px; color: white; display: flex; flex-direction: column;
        justify-content: center; align-items: center; border-radius: 2vw">
         <p style="font-size: 3vw; margin: 0;">Faire un don</p>
-        <p style="font-size: 1vw; margin: 0;">Vos dons sont déductibles à hauteur de 66% des impôts sur le revenu. Pour 100€ donnés, votre don vous revient en réalité à 34€.</p>
+        <p style="font-size: 1vw; margin: 0;">Vos dons sont déductibles à hauteur de 66% des impôts sur le revenu.</p>
+        <p style="font-size: 1vw; margin: 0;"> Pour 100€ donnés, votre don vous revient en réalité à 34€.</p>
+
       </a>
 
       <p style="font-size: 1.2vw; color: #333; font-style: italic; line-height: 1.5; margin-top: 1vw;">
         « S'ouvrir un peu aux uns, aux autres permet de faire tomber nos barrières et ainsi de réduire le malheur et l'indifférence. »
       </p>
-      <p>Présidente d'Evail</p>
+      <p style="font-size: 1vw;">Présidente d'Evail</p>
+
+    </div>
+
+    <div style="background-color: var(--primary-color)">
+      <div class="second_page_subtitle" style="color: white; padding: 1vw; display: flex; justify-content: center; align-items: center">
+        Contact
+      </div>
+
+      <div style="display: flex; flex-direction: row; color: white; justify-content: center; align-items: center; margin-bottom: 0.5vw;">
+        <img src="../assets/logo/mail-logo.png" style="width: 2.5vw; height: auto; margin-right: 0.5vw;">
+        <p style="margin: 0; font-size: 1vw">Contact.evailhumanitaire@gmail.com</p>
+      </div>
+
+      <div style="display: flex; flex-direction: row; color: white; justify-content: center; align-items: center; ">
+        <img src="../assets/logo/insta-logo.png" style="width: 2.5vw; height: auto; margin-right: 0.5vw;">
+        <p style="margin: 0; font-size: 1vw">@evail_humanitaire</p>
+      </div>
+
+
 
     </div>
 
@@ -378,6 +410,13 @@ export default defineComponent({
   overflow-x: hidden;
 
 
+}
+
+.donate:hover
+{
+  background-color: var(--secondary-color) !important;
+  padding-right: 15px !important;
+  padding-left: 15px !important;
 }
 
 
@@ -414,78 +453,30 @@ export default defineComponent({
   font-weight: bold;
 }
 
-.fourth_page
-{
-  display: flex;
-  flex-direction: column;
-  justify-content: start;
-  align-items: center;
-  color: black;
-
-
+@keyframes count-animation {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+  }
 }
 
-.fourth_page_title
-{
-  font-size: 3vw;
-  background-color: var(--primary-color);
-  color: white;
-  width: 100vw;
-  padding: 2vw;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-
+.digit {
+  /* Ajoute l'animation ici */
+  animation: count-animation 0.5s ease-in-out forwards;
 }
 
-.fourth_page_information
-{
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between; /* Espace entre les deux éléments */
-  width: 100vw;
-
-  align-items: center;/* Assure que les éléments enfants prennent la même hauteur */
+.digit.animate {
+  animation: count-animation 0.5s ease-in-out forwards;
 }
 
-.fourth_page_text
-{
-  flex:1;
-  //background-color: #e45655;
-  //color: black;
-  color: black;
-  font-size: 2em;
-  display: flex;
-  flex-direction: column;
-  justify-content: start;
-  align-items: center;
-  //border-radius: 10px;
-  padding: 1vw; /* Pour un peu d'espace autour du texte */
-}
 
-.fourth_page_image
-{
-  flex: 0.5; /* Occupe 50% de la largeur */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative; /* Nécessaire pour positionner l'image et le cercle ensemble */
-}
-
-.fourth_page_image img {
-  position: relative;
-  width: 100%; /* Conserve le ratio d'aspect */
-  max-width: 100%; /* Ne dépasse pas la largeur disponible */
-  z-index: 1; /* L'image doit rester au-dessus du cercle */
-}
-
-.fourth_page_paragraph
-{
-  text-align: center;
-  font-size : 1.3vw;
-  margin-left: 5%;
-  margin-top: 5%;
-}
 
 .fifth_page
 {
@@ -523,70 +514,7 @@ export default defineComponent({
   font-weight: bold;
 }
 
-.sixth_page
-{
-  display: flex;
-  flex-direction: column;
-  justify-content: start;
-  align-items: center;
-  color: black;
 
-
-}
-
-
-.timeline {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 80%;
-  margin: 50px auto;
-  position: relative;
-}
-
-/* Horizontal line */
-.timeline::before {
-  content: '';
-  position: absolute;
-  top: 30%;
-  left: 0;
-  width: 100%;
-  height: 4px;
-  background-color: #b58632;
-  z-index: -1;
-}
-
-.event {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-}
-
-/* Circles for events */
-.circle {
-  width: 40px;
-  height: 40px;
-  background-color: #b58632;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  margin-bottom: 10px;
-}
-
-.event-text {
-  color: black;
-  font-size: 14px;
-  font-weight: bold;
-}
-
-.highlight {
-  border: 3px solid purple;
-  border-radius: 50%;
-  padding: 5px;
-}
 
 .seventh_page
 {

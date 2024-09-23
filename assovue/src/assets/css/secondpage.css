@@ -25,8 +25,6 @@
 }
 .second_page_title
 {
-//color: #e45655;
-//color: white;
     color : var(--primary-color);
     font-size: 3vw;
 }
@@ -103,5 +101,39 @@
     font-size : 1.3vw;
     margin-left: 1vw;
     margin-bottom: 5%;
+
+}
+
+.second_page_subtitle {
+    font-size: 3vw; /* Taille par défaut */
+}
+
+
+@media (max-width: 500px) {
+    .second_page_paragraph {
+        font-size: 3vw; /* Ajuste la taille pour les petits écrans */
+    }
+
+    .second_page_text
+    {
+        padding: 3vh;
+    }
+
+    .second_page_information
+    {
+        flex-direction: column;
+        justify-content: center;
+        align-content: center;
+    }
+
+    .second_page_subtitle
+    {
+        display: none !important;
+    }
+
+    .second_page_title
+    {
+        font-size: 6vw;
+    }
 
 }

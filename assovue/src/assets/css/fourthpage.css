@@ -1,0 +1,116 @@
+.fourth_page
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    color: black;
+
+
+}
+
+.fourth_page_title
+{
+    font-size: 3vw;
+    background-color: var(--primary-color);
+    color: white;
+    width: 100vw;
+    padding: 2vw;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+}
+
+.fourth_page_information
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between; /* Espace entre les deux éléments */
+    width: 100vw;
+
+    align-items: center;/* Assure que les éléments enfants prennent la même hauteur */
+}
+
+.fourth_page_text
+{
+    flex:1;
+//background-color: #e45655;
+//color: black;
+    color: black;
+    font-size: 2em;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+//border-radius: 10px;
+    padding: 1vw; /* Pour un peu d'espace autour du texte */
+}
+
+.fourth_page_image
+{
+    flex: 0.5; /* Occupe 50% de la largeur */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative; /* Nécessaire pour positionner l'image et le cercle ensemble */
+}
+
+.fourth_page_image img {
+    position: relative;
+    width: 100%; /* Conserve le ratio d'aspect */
+    max-width: 100%; /* Ne dépasse pas la largeur disponible */
+    z-index: 1; /* L'image doit rester au-dessus du cercle */
+}
+
+.fourth_page_paragraph
+{
+    text-align: center;
+    font-size : 1.3vw;
+    margin-left: 5%;
+    margin-top: 5%;
+}
+
+.fourth_page_plus
+{
+    cursor: pointer; font-size: 1.2vw; color: blue; margin-top: 2vh; text-decoration: underline;
+}
+
+@media (max-width: 500px)
+{
+    .fourth_page_information
+    {
+        flex-direction: column;
+    }
+
+    .fourth_page_text
+    {
+        width: 100%;
+    }
+
+    .fourth_page_image
+    {
+        width: 100%;
+    }
+
+    .fourth_page_title
+    {
+        font-size: 6vw;
+    }
+
+    .fourth_page_paragraph
+    {
+        margin-left: 0;
+        font-size : 1.5vh;
+    }
+
+    .fourth_page_plus
+    {
+        font-size: 1.5vh;
+    }
+
+    .disappear_on_mobile
+    {
+        display: none !important;
+    }
+}

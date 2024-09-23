@@ -60,68 +60,35 @@
     font-size : 5em;
 }
 
-
-/* Responsiveness */
-
-/* Styles pour les petits PC */
-@media (max-width: 1366px) and (min-width: 1025px) {
-    .firstpage_title_text {
-        font-size: 2.2em; /* Ajuste la taille du texte pour les petits PC */
-    }
-
-    .firstpage_logo_container {
-        justify-content: center; /* Centre les éléments sur petit PC */
-        max-height: 25vh; /* Ajuste la hauteur du conteneur pour petit PC */
-    }
-
-    .logo {
-        max-width: 70%; /* Limite la taille du logo pour qu'il s'adapte aux petits écrans */
-        max-height: 70%;
-    }
-
-
+.first_page_information img
+{
+    width: 30vw; height:auto;margin-left: 10vw;
 }
 
-/* Styles pour les écrans de tablettes */
-@media (max-width: 1024px) {
-    .firstpage_title_text {
-        font-size: 2.5em; /* Réduit la taille du texte sur les tablettes */
-    }
-
-    .firstpage_logo_container {
-        justify-content: center; /* Centre les éléments sur tablette */
-        max-height: 20vh; /* Diminue la hauteur du conteneur pour tablette */
-    }
-
-    .logo {
-        max-width: 80%; /* Limite la taille du logo pour qu'il s'adapte aux petits écrans */
-        max-height: 80%;
-    }
 
 
 
-    .screen_display {
-
-    }
-}
 
 /* Styles pour les écrans de téléphones */
-@media (max-width: 768px) {
-    .firstpage_title_text {
-        font-size: 2em; /* Réduit encore plus la taille du texte pour téléphone */
+@media (max-width: 500px) {
+
+    .first_page_information
+    {
+        display: flex; flex-direction: column; margin-top: 10vh; justify-content: center; align-items: center; color: white; font-size: 5vh;
     }
 
-    .firstpage_logo_container {
-        flex-direction: column; /* Affiche le logo et le texte en colonne sur téléphone */
-        justify-content: center;
-        align-items: center;
-
-        margin-top: 5%; /* Réduit la marge pour téléphone */
+    .first_page_information img
+    {
+        width: 30vh; height:auto; margin-left: 0; margin-top: 10vh;
     }
 
-    .logo {
-        max-width: 80%; /* Limite la taille du logo pour qu'il s'adapte aux petits écrans */
-        max-height: 80%;
+    .first_page
+    {
+        height: 80vh;
+    }
+    .first_page_filter
+    {
+        height: 80vh;
     }
 
 }
