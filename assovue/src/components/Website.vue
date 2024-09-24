@@ -195,7 +195,7 @@ export default defineComponent({
             <p class="fourth_page_paragraph">Nous voyageons depuis peu et rencontrons les populations sur le terrain pour comprendre leurs enjeux sanitaires et les préoccupations des habitants. Nous partons pendant deux semaines, dans chaque ville, même les plus reculées où nous faisons de la prévention sur des pathologies propres aux pays confrontés aux développements  et soignons des maladies qui ne nécessitent pas d’interventions chirurgicales. </p>
             <p class="fourth_page_paragraph">A terme, nous souhaiterions en collaboration avec les localités, permettre aux pays d’avoir des clés nécessaires pour être auto-suffisants en matière de préventions et de dépistage .  Donc d’encourager les initiatives locales et pérenniser l’éducation thérapeutique reçue. </p>
             <p class="fourth_page_plus" @click="openPDF" >En savoir plus</p>
-            <div style="display: flex; flex-direction: row; align-items: center; justify-content: center">
+            <div class="counter_content" >
               <div class="counter-container">
                 <div class="counter">
                   <div class="digit">1</div>
@@ -420,7 +420,13 @@ export default defineComponent({
 }
 
 
-
+.counter_content
+{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
 
 
 .counter-container {
@@ -452,8 +458,18 @@ export default defineComponent({
   {
     width: 5vw;
     font-size: 5vw;
-
   }
+
+  .counter_content
+  {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+
+
 
 ;
 
