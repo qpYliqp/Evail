@@ -433,10 +433,29 @@ export default defineComponent({
 }
 
 @media (max-width: 500px) {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+
+  .counter-container
+  {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 2vh;
+  }
+
+  .counter-container p
+  {
+    font-size: 2vw;
+  }
+
+  .digit
+  {
+    width: 5vw;
+    font-size: 5vw;
+
+  }
+
+;
 
 }
 
