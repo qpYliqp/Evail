@@ -432,6 +432,14 @@ export default defineComponent({
   padding-top: 5vh;
 }
 
+@media (max-width: 500px) {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+}
+
 .counter-container p {
   font-size: 1vw;
   color: black;
