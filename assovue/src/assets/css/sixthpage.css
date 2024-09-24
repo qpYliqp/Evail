@@ -99,4 +99,11 @@
         height:10vh;
     }
 
+    .circle
+    {
+        width: 1.5vh;
+        height: 1.5vh;
+        font-size: 1vw;
+    }
+
 }
