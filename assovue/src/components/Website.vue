@@ -383,7 +383,7 @@ export default defineComponent({
 
       <div style="display: flex; flex-direction: row; color: white; justify-content: center; align-items: center; ">
         <img src="../assets/logo/insta-logo.png" style="width: 2.5vw; height: auto; margin-right: 0.5vw;">
-        <a href="" style="margin: 0; font-size: 1vw">@evail_humanitaire</a>
+        <p style="margin: 0; font-size: 1vw">@evail_humanitaire</p>
       </div>
 
 
