@@ -37,8 +37,8 @@ export default defineComponent({
 
     const initMate = () =>
     {
-      let Anne = new Mate("Annie","/assets/images/mates/anne.png", "Anne est la fondatrice et la directrice de l'association. Ancienne bio-esthéticienne, elle s'est reconvertie en tant que infirmière. ", "L'humain est au cœur de nos professions,nous restons donc des soignants, non des gens spéciaux " )
-      let Yaye = new Mate("Yaye","/assets/images/mates/yaye.png", "Yaye est la co-directice de l'association. Certifiée en pratique snoezelen et diplômée d'état d'accompagnant éducatif.", "Nos actions ne sont pas des vacances encore moins du tourisme ou des parties de rigolades, même si la bonne humeur nous accompagne! C'est un engagement de l'âme, nous donnons un peu de nous même à chaque voyage." )
+      let Anne = new Mate("Annie","/assets/images/mates/anne.png", "Annie est la fondatrice et la directrice de l'association. Ancienne bio-esthéticienne, elle s'est reconvertie en tant que infirmière. ", "L'humain est au cœur de nos professions,nous restons donc des soignants, non des gens spéciaux " )
+      let Yaye = new Mate("Yaye","/assets/images/mates/yaye.png", "Yaye est la co-fondatrice de l'association. Certifiée en pratique snoezelen methode d'accompagnement sensoriel  et bien être et diplômée d'état d'aide médico-psychologique", "Nos actions ne sont pas des vacances encore moins du tourisme ou des parties de rigolades, même si la bonne humeur nous accompagne! C'est un engagement de l'âme, nous donnons un peu de nous même à chaque voyage." )
       let Minette = new Mate("Minette","/assets/images/mates/minette.png", "co-fondatrice et trésorière de l'association. Architecte d'intérieure et aide-soignante en soins palliatifs", "L'amour est un guide dans ma vie. Bien plus qu'une étincelle belle, douce et accomplie. Il m'a appris à me servir de ses ailes." )
       let Martine = new Mate("Martine Gomis","/assets/images/mates/martine.png", "Martine Gomis secrétaire de l'association, assistante spécialisée dans le milieu du handicap, et infirmière.", "Ensemble, vivons des moments uniques, grandissons chaque jour, pour offrir le meilleur à chacun." )
 
@@ -383,7 +383,7 @@ export default defineComponent({
 
       <div style="display: flex; flex-direction: row; color: white; justify-content: center; align-items: center; ">
         <img src="../assets/logo/insta-logo.png" style="width: 2.5vw; height: auto; margin-right: 0.5vw;">
-        <p style="margin: 0; font-size: 1vw">@evail_humanitaire</p>
+        <a href="" style="margin: 0; font-size: 1vw">@evail_humanitaire</a>
       </div>
 
 
@@ -425,6 +425,8 @@ export default defineComponent({
 
 .counter-container {
   display: inline-block;
+  justify-content: center;
+  align-items: center;
   text-align: center;
   width: 20vw;
   padding-top: 5vh;
