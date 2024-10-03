@@ -37,7 +37,7 @@ export default defineComponent({
 
     const initMate = () =>
     {
-      let Anne = new Mate("Annie","/assets/images/mates/anne.png", "Annie est la fondatrice et la directrice de l'association. Ancienne bio-esthéticienne, elle s'est reconvertie en tant que infirmière. ", "L'humain est au cœur de nos professions,nous restons donc des soignants, non des gens spéciaux " )
+      let Anne = new Mate("Annie","/assets/images/mates/anne.png", "Annie est la fondatrice et la directrice de l'association. Ancienne bio-esthéticienne, elle s'est reconvertie en tant qu'agent hospitalier dans la fonction publique. ", "L'humain est au cœur de nos professions,nous restons donc des soignants, non des gens spéciaux " )
       let Yaye = new Mate("Yaye","/assets/images/mates/yaye.png", "Yaye est la co-directrice de l'association. Elle est certifiée en pratique Snoezelen (accompagnement sensoriel et bien-être) et diplômée d'État en tant qu'aide médico-psychologique.", "Mon humanité est liée à la vôtre, car nous ne pouvons être pleinement humains qu'ensemble. Partageons le bonheur." )
       let Minette = new Mate("Minette","/assets/images/mates/minette.png", "co-fondatrice et trésorière de l'association. Architecte d'intérieure et aide-soignante en soins palliatifs", "L'amour est un guide dans ma vie. Bien plus qu'une étincelle belle, douce et accomplie. Il m'a appris à me servir de ses ailes." )
       let Martine = new Mate("Martine Gomis","/assets/images/mates/martine.png", "Martine Gomis secrétaire de l'association, assistante spécialisée dans le milieu du handicap, et infirmière.", "Ensemble, vivons des moments uniques, grandissons chaque jour, pour offrir le meilleur à chacun." )
@@ -112,10 +112,10 @@ export default defineComponent({
             EVAIL humanitaire est née d’une amitié, d’un rêve commun : celui d’aider les autres aux delà des frontières. Pour concrétiser ce projet Annie, Minette et Yaye l’ont porté durant deux ans.
           </p>
           <p class="second_page_paragraph">
-            Pour concrétiser ce projet Annie, Minette et Yaye l’ont porté durant deux ans. Elles se sont données comme premier objectif de voyager au Sénégal. En France, elles parlent de ce projet à leurs collègues. Sitôt, une équipe de soignants est montée.
+            Annie, Minette et Yaye ont porté ce projet durant deux ans. Elles se sont données comme premier objectif de voyager au Sénégal. En France, elles parlent de ce projet à leurs collègues. Sitôt, une équipe de soignants est montée.
           </p>
           <p class="second_page_paragraph">
-            Les actions se multiplient telles que le démarchage en pharmacies partenaires ou pour des médicaments, en magasin pour des fournitures scolaire ou bien en recherche de bénévoles ou encore en organisation de réunion et de rencontres promotionnelles pour l'association.
+            Les actions se multiplient telles que le démarchage en pharmacies partenaires ou pour des médicaments, en magasin pour des fournitures scolaires ou bien en recherche de bénévoles ou encore en organisation de réunions et de rencontres promotionnelles pour l'association.
           </p>
           <p class="second_page_paragraph">
             Ce premier voyage relevé avec brio, ce trio ne souhaite pas s’arrêter en si bon chemin et compte maintenant une équipe de plus de 30 soignants ainsi que de nouvelles actions à travers la France et le monde entier.
@@ -189,7 +189,7 @@ export default defineComponent({
         </div>
 
           <div class="fourth_page_text">
-            <p class="second_page_title">Soigner, un devoir.</p>
+            <p class="second_page_title">Soigner, un devoir, une priorité.</p>
             <p class="fourth_page_paragraph">Notre souhait profond est de soigner, dans le champs de nos compétences chaque personne qui en a le besoin.</p>
             <p class="fourth_page_paragraph">Animé par ce devoir, nous sommes aujourd’hui une équipe composée d’infirmiers, médecins, d’aides-soignants  et bien d'autres professionnels de la santé publique. </p>
             <p class="fourth_page_paragraph">Nous voyageons depuis peu et rencontrons les populations sur le terrain pour comprendre leurs enjeux sanitaires et les préoccupations des habitants. Nous partons pendant deux semaines, dans chaque ville, même les plus reculées où nous faisons de la prévention sur des pathologies propres aux pays confrontés aux développements  et soignons des maladies qui ne nécessitent pas d’interventions chirurgicales. </p>
@@ -203,7 +203,7 @@ export default defineComponent({
                   <div class="digit">3</div>
                   <div class="digit">6</div>
                 </div>
-                <p>CONSULTATION</p>
+                <p>CONSULTATIONS</p>
               </div>
 
               <div class="counter-container">
@@ -276,7 +276,7 @@ export default defineComponent({
     <div class="sixth_page">
       <div style="display: flex; flex-direction: column; justify-content: center; align-items: center;  width: 100vw; padding : 2vw; background-color: var(--primary-color); ">
         <p class="second_page_title" style="color: white;">Découvrez nos voyages humanitaires.</p>
-        <p class="second_page_title" style="color: white">L’aide ne connais pas de frontières.</p>
+        <p class="second_page_title" style="color: white">L’aide ne connait pas de frontières.</p>
       </div>
 
       <div class="timeline">
@@ -308,7 +308,7 @@ export default defineComponent({
           <div class="second_page_text" style="flex: 1;color: black; display: flex; justify-content: center">
             <p class="second_page_paragraph">Ce premier voyage nous a permis d’être accueillies par les habitants des villages en collaboration avec l’association AMP présente sur place, le consulat général et les autorités du Sénégal.</p>
             <p class="second_page_paragraph">Nous avons majoritairement fait de la prévention sur des pathologies comme le diabète, l’hypertension artérielle, le cholestérol, les IST, les douleurs articulaires, l’arthrite, l’arthrose ainsi que les problèmes oculaires. </p>
-            <p class="second_page_paragraph">Nous avons également soignés beaucoup de blessures liées à ces maladies. Notre équipe plus que jamais soudés par les difficultés n’a pas eu peur de se confronter à la dureté de la vie des habitants</p>
+            <p class="second_page_paragraph">Nous avons également soigné beaucoup de blessures liées à ces maladies. Notre équipe plus que jamais soudée par les difficultés n’a pas eu peur de se confronter à la dureté de la vie des habitants</p>
 
           </div>
         </div>
