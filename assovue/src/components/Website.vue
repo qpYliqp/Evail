@@ -39,7 +39,7 @@ export default defineComponent({
     {
       let Anne = new Mate("Annie","/assets/images/mates/anne.png", "Annie est la fondatrice et la directrice de l'association. Ancienne bio-esthéticienne, elle s'est reconvertie en tant qu'agent hospitalier dans la fonction publique. ", "L'humain est au cœur de nos professions,nous restons donc des soignants, non des gens spéciaux " )
       let Yaye = new Mate("Yaye","/assets/images/mates/yaye.png", "Yaye est la co-directrice de l'association. Elle est certifiée en pratique Snoezelen (accompagnement sensoriel et bien-être) et diplômée d'État en tant qu'aide médico-psychologique.", "Mon humanité est liée à la vôtre, car nous ne pouvons être pleinement humains qu'ensemble. Partageons le bonheur." )
-      let Minette = new Mate("Minette","/assets/images/mates/minette.png", "co-fondatrice et trésorière de l'association. Architecte d'intérieure et aide-soignante en soins palliatifs", "L'amour est un guide dans ma vie. Bien plus qu'une étincelle belle, douce et accomplie. Il m'a appris à me servir de ses ailes." )
+      let Minette = new Mate("Minette","/assets/images/mates/minette.png", "Co-fondatrice et trésorière de l'association. Architecte d'intérieure et professionnelle de la santé public et privé en soins palliatifs", "L'amour est un guide dans ma vie. Bien plus qu'une étincelle belle, douce et accomplie. Il m'a appris à me servir de ses ailes." )
       let Martine = new Mate("Martine Gomis","/assets/images/mates/martine.png", "Martine Gomis secrétaire de l'association, assistante spécialisée dans le milieu du handicap, et infirmière.", "Ensemble, vivons des moments uniques, grandissons chaque jour, pour offrir le meilleur à chacun." )
 
       mates.value.push(Anne)
@@ -55,10 +55,12 @@ export default defineComponent({
         let first = "/assets/images/expo1.jpg"
         let second = "/assets/images/expo2.jpg"
       let third = "/assets/images/projet5.jpg"
+      let fourth = "/assets/images/projet2.jpg"
 
         expo.value.push(first)
         expo.value.push(second)
         expo.value.push(third)
+        //expo.value.push(fourth)
 
     }
 
@@ -192,8 +194,8 @@ export default defineComponent({
             <p class="second_page_title">Soigner, un devoir, une priorité.</p>
             <p class="fourth_page_paragraph">Notre souhait profond est de soigner, dans le champs de nos compétences chaque personne qui en a le besoin.</p>
             <p class="fourth_page_paragraph">Animé par ce devoir, nous sommes aujourd’hui une équipe composée d’infirmiers, médecins, d’aides-soignants  et bien d'autres professionnels de la santé publique. </p>
-            <p class="fourth_page_paragraph">Nous voyageons depuis peu et rencontrons les populations sur le terrain pour comprendre leurs enjeux sanitaires et les préoccupations des habitants. Nous partons pendant deux semaines, dans chaque ville, même les plus reculées où nous faisons de la prévention sur des pathologies propres aux pays confrontés aux développements  et soignons des maladies qui ne nécessitent pas d’interventions chirurgicales. </p>
-            <p class="fourth_page_paragraph">A terme, nous souhaiterions en collaboration avec les localités, permettre aux pays d’avoir des clés nécessaires pour être auto-suffisants en matière de préventions et de dépistage .  Donc d’encourager les initiatives locales et pérenniser l’éducation thérapeutique reçue. </p>
+            <p class="fourth_page_paragraph">Nous voyageons depuis peu et rencontrons les populations sur le terrain pour comprendre leurs enjeux sanitaires et les préoccupations des habitants. Nous partons pendant deux semaines, dans chaque ville, même les plus reculées où nous faisons de la prévention sur des pathologies propres aux pays confrontés aux développements  et soignons des maladies qui ne nécessitent pas d’interventions chirurgicales.</p>
+            <p class="fourth_page_paragraph">A terme, nous souhaiterions en collaboration avec les localités, permettre aux pays d’avoir des clés nécessaires pour être auto-suffisants en matière de préventions et de dépistage .  Donc d’encourager les initiatives locales et pérenniser l’éducation thérapeutique reçue.</p>
             <p class="fourth_page_plus" @click="openPDF" >En savoir plus</p>
             <div class="counter_content" >
               <div class="counter-container">
@@ -257,7 +259,7 @@ export default defineComponent({
           <swiper-slide v-for="image in expo" :key="image">
             <div
                 style=" width: 100vw; height:82vh; display: flex; justify-content: center; align-items: center;">
-              <img :src="image" style="width: 100%; height: 100%; object-fit: cover; user-select: none">
+              <img :src="image" style="width: 100%; height: 100%; object-fit: contain; user-select: none">
             </div>
           </swiper-slide>
 
