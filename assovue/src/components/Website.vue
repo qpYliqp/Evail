@@ -38,9 +38,9 @@ export default defineComponent({
     const initMate = () =>
     {
       let Anne = new Mate("Annie","/assets/images/mates/anne.png", "Annie est la fondatrice et la directrice de l'association. Ancienne bio-esthéticienne, elle s'est reconvertie en tant qu'agent hospitalier dans la fonction publique. ", "L'humain est au cœur de nos professions,nous restons donc des soignants, non des gens spéciaux " )
-      let Yaye = new Mate("Yaye","/assets/images/mates/yaye.png", "Yaye est la co-directrice de l'association. Elle est certifiée en pratique Snoezelen (accompagnement sensoriel et bien-être) et diplômée d'État en tant qu'aide médico-psychologique.", "Mon humanité est liée à la vôtre, car nous ne pouvons être pleinement humains qu'ensemble. Partageons le bonheur." )
+      let Yaye = new Mate("Yaye","/assets/images/mates/yaye.png", "Yaye est la co-directrice de l'association. Elle est certifiée en pratique Snoezelen (accompagnement sensoriel et bien-être) et est professionnelle de santé à la fois dans le secteur privé et public.", "Mon humanité est liée à la vôtre, car nous ne pouvons être pleinement humains qu'ensemble. Partageons le bonheur." )
       let Minette = new Mate("Minette","/assets/images/mates/minette.png", "Co-fondatrice et trésorière de l'association. Architecte d'intérieure et professionnelle de la santé public et privé en soins palliatifs", "L'amour est un guide dans ma vie. Bien plus qu'une étincelle belle, douce et accomplie. Il m'a appris à me servir de ses ailes." )
-      let Martine = new Mate("Martine Gomis","/assets/images/mates/martine.png", "Martine Gomis secrétaire de l'association, assistante spécialisée dans le milieu du handicap, et infirmière.", "Ensemble, vivons des moments uniques, grandissons chaque jour, pour offrir le meilleur à chacun." )
+      let Martine = new Mate("Martine Gomis","/assets/images/mates/martine.png", "Martine Gomis secrétaire de l'association, assistante spécialisée dans le milieu du handicap, et professionnelle de santé dans le privé et public.", "Ensemble, vivons des moments uniques, grandissons chaque jour, pour offrir le meilleur à chacun." )
 
       mates.value.push(Anne)
       mates.value.push(Yaye)
