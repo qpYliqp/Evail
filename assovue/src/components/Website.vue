@@ -260,7 +260,7 @@ export default defineComponent({
           <swiper-slide v-for="image in expo" :key="image">
             <div
                 style=" width: 100vw; height:82vh; display: flex; justify-content: center; align-items: center;">
-              <img :src="image" style="width: 100%; height: 100%; object-fit: contain; user-select: none">
+              <img :src="image" style="width: 100%; height: 100%; object-fit: cover; user-select: none">
             </div>
           </swiper-slide>
 
