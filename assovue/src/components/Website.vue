@@ -37,8 +37,8 @@ export default defineComponent({
 
     const initMate = () =>
     {
-      let Anne = new Mate("Annie","/assets/images/mates/anne.png", "Annie est la fondatrice et la directrice de l'association. Ancienne bio-esthéticienne, elle s'est reconvertie en tant qu'agent hospitalier dans la fonction publique. ", "L'humain est au cœur de nos professions,nous restons donc des soignants, non des gens spéciaux " )
-      let Yaye = new Mate("Yaye","/assets/images/mates/yaye.png", "Yaye est la co-directrice de l'association. Elle est certifiée en pratique Snoezelen (accompagnement sensoriel et bien-être) et est professionnelle de santé à la fois dans le secteur privé et public.", "Mon humanité est liée à la vôtre, car nous ne pouvons être pleinement humains qu'ensemble. Partageons le bonheur." )
+      let Anne = new Mate("Annie","/assets/images/mates/anne.png", "Annie est la fondatrice et présidente de l'association. Ancienne bio-esthéticienne, elle s'est reconvertie en tant qu'agent hospitalier dans la fonction publique. ", "L'humain est au cœur de nos professions,nous restons donc des soignants, non des gens spéciaux " )
+      let Yaye = new Mate("Yaye","/assets/images/mates/yaye.png", "Yaye est co-fondatrice et vice-présidente de l'association. Elle est certifiée en pratique Snoezelen (accompagnement sensoriel et bien-être) et est professionnelle de santé à la fois dans le secteur privé et public.", "Mon humanité est liée à la vôtre, car nous ne pouvons être pleinement humains qu'ensemble. Partageons le bonheur." )
       let Minette = new Mate("Minette","/assets/images/mates/minette.png", "Co-fondatrice et trésorière de l'association. Architecte d'intérieure et professionnelle de la santé public et privé en soins palliatifs", "L'amour est un guide dans ma vie. Bien plus qu'une étincelle belle, douce et accomplie. Il m'a appris à me servir de ses ailes." )
       let Martine = new Mate("Martine Gomis","/assets/images/mates/martine.png", "Martine Gomis secrétaire de l'association, assistante spécialisée dans le milieu du handicap, et professionnelle de santé dans le privé et public.", "Ensemble, vivons des moments uniques, grandissons chaque jour, pour offrir le meilleur à chacun." )
 
@@ -115,7 +115,7 @@ export default defineComponent({
             EVAIL humanitaire est née d’une amitié, d’un rêve commun : celui d’aider les autres aux delà des frontières. Pour concrétiser ce projet Annie, Minette et Yaye l’ont porté durant deux ans.
           </p>
           <p class="second_page_paragraph">
-            Annie, Minette et Yaye ont porté ce projet durant deux ans. Elles se sont données comme premier objectif de voyager au Sénégal. En France, elles parlent de ce projet à leurs collègues. Sitôt, une équipe de soignants est montée.
+            Annie, Minette et Yaye ont porté ce projet, elles l'ont soigneusement peaufiné. Elles se sont données comme premier objectif de voyager au Sénégal. En France, elles parlent de ce projet à leurs collègues. Sitôt, une équipe de soignants est montée.
           </p>
           <p class="second_page_paragraph">
             Les actions se multiplient telles que le démarchage en pharmacies partenaires ou pour des médicaments, en magasin pour des fournitures scolaires ou bien en recherche de bénévoles ou encore en organisation de réunions et de rencontres promotionnelles pour l'association.
