@@ -1,43 +1,35 @@
 <script setup>
-
-import Home from "@/components/Home.vue";
-import Website from "@/components/Website.vue";
+import HomeView from "@/components/HomeView.vue";
+import PresentationView from "@/components/PresentationView.vue";
+import Staffview from "@/components/Staffview.vue";
+import ActionView from "@/components/ActionView.vue";
+import ImageCarouselView from "@/components/ImageCarouselView.vue";
+import TravelView from "@/components/TravelView.vue";
+import DonateView from "@/components/DonateView.vue";
+import FooterView from "@/components/FooterView.vue";
 </script>
 
 <template>
-  <body>
-<!--    <Home style="width: 100%; height: 100%"></Home>-->
-  <Website></Website>
-  </body>
+  <head>
+    <meta charset="utf-8">
+    <link rel="icon" href="/images/logos/evail-icon.png">
+    <title>Evail</title>
+  </head>
+
+  <main>
+
+    <HomeView></HomeView>
+    <PresentationView></PresentationView>
+    <Staffview></Staffview>
+    <ActionView></ActionView>
+    <ImageCarouselView></ImageCarouselView>
+    <TravelView></TravelView>
+    <DonateView></DonateView>
+    <FooterView></FooterView>
+
+  </main>
 </template>
 
 <style scoped>
-header {
-  line-height: 1.5;
-}
 
-
-
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
-
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
-}
 </style>
