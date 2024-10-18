@@ -34,12 +34,12 @@
 @media (max-width: 600px) {
 
   .contact-info {
-    font-size: 1.3vh;
+    font-size: 1vh;
   }
 
   .contact-logo
   {
-    width: 1.3vh; height: auto; margin-right: 0.5vw;
+    width: 1vh; height: auto; margin-right: 0.5vw;
   }
 }
 

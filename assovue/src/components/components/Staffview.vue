@@ -46,9 +46,9 @@ export default defineComponent({
 </script>
 
 <template>
-  <div class="background-white-color text-primary-color title-container">
-    <p class="title_size">Une équipe pluri-professionnelle</p>
-  </div>
+<div class="background-white-color text-primary-color title-container">
+  <p class="title_size">Une équipe pluri-professionnelle</p>
+</div>
 
   <div class="staff_swiper_container">
 
@@ -139,19 +139,7 @@ export default defineComponent({
 }
 
 
-@media (max-width: 1300px) {
-  .staff_image
-  {
-    width: 200px; height: 200px; border-radius: 50%; margin-top: 2vh;
-  }
-
-  .staff_name
-  {
-    color: black; font-size: 6vh; margin-top: 2vh; user-select: none
-  }
-}
-
-@media (max-width: 700px) {
+@media (max-width: 500px) {
 
 
   .staff_image
@@ -180,7 +168,7 @@ export default defineComponent({
     margin-top: -10vh;
     transform: translateY(-10vh);
   }
-
+  
 }
 
 </style>

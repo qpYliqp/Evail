@@ -57,8 +57,8 @@ export default defineComponent({
   <div class="travel-timeline">
     <div class="travel-items">
       <div v-for="travel in travels_list">
-        <div class="travel-circle">{{travel.getStartDate()}}</div>
-        <div class="travel-circle-date">{{ travel.getDestination() }}</div>
+          <div class="travel-circle">{{travel.getStartDate()}}</div>
+          <div class="travel-circle-date">{{ travel.getDestination() }}</div>
       </div>
     </div>
   </div>
@@ -75,40 +75,40 @@ export default defineComponent({
 
     </div>
 
-    <div style="flex:1;">
+      <div style="flex:1;">
 
-      <div style="display: flex; flex-direction: row; align-self: stretch">
-        <div style="display: flex; flex-direction: column; flex: 1">
-          <div class="big_image">
-            <img src="/images/travels/casamance/casamance-7.jpg" style="width: 100%; height: 100%; object-fit: cover;">
+        <div style="display: flex; flex-direction: row; align-self: stretch">
+          <div style="display: flex; flex-direction: column; flex: 1">
+            <div class="big_image">
+              <img src="/images/travels/casamance/casamance-7.jpg" style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+            <div class="little_image">
+              <img src="/images/travels/casamance/casamance-5.jpg" style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
           </div>
-          <div class="little_image">
-            <img src="/images/travels/casamance/casamance-5.jpg" style="width: 100%; height: 100%; object-fit: cover;">
+
+          <div style="display: flex; flex-direction: column; flex: 1">
+            <div class="little_image">
+              <img src="/images/travels/casamance/casamance-1.jpg" style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+            <div class="big_image" >
+              <img src="/images/travels/casamance/casamance-2.jpg" style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+          </div>
+
+          <div style="display: flex; flex-direction: column; flex: 1">
+            <div class="middle_image" >
+              <img src="/images/travels/casamance/casamance-3.jpg" style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+            <div class="middle_image">
+              <img src="/images/travels/casamance/casamance-4.jpg" style="width: 100%; height: 100%; object-fit: cover;">
+
+            </div>
           </div>
         </div>
 
-        <div style="display: flex; flex-direction: column; flex: 1">
-          <div class="little_image">
-            <img src="/images/travels/casamance/casamance-1.jpg" style="width: 100%; height: 100%; object-fit: cover;">
-          </div>
-          <div class="big_image" >
-            <img src="/images/travels/casamance/casamance-2.jpg" style="width: 100%; height: 100%; object-fit: cover;">
-          </div>
-        </div>
-
-        <div style="display: flex; flex-direction: column; flex: 1">
-          <div class="middle_image" >
-            <img src="/images/travels/casamance/casamance-3.jpg" style="width: 100%; height: 100%; object-fit: cover;">
-          </div>
-          <div class="middle_image">
-            <img src="/images/travels/casamance/casamance-4.jpg" style="width: 100%; height: 100%; object-fit: cover;">
-
-          </div>
-        </div>
       </div>
-
     </div>
-  </div>
 
 
 

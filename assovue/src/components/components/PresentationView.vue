@@ -88,18 +88,12 @@
 }
 
 
-
 @media (max-width: 800px)
 {
   .presentation-content
   {
     flex-direction: column;
     align-items: center;
-  }
-
-  .presentation-title-container
-  {
-    display: none;
   }
 
 
