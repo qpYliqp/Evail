@@ -12,7 +12,7 @@ import FooterView from "@/components/FooterView.vue";
 <template>
   <head>
     <meta charset="utf-8">
-    <link rel="icon" href="/images/logos/evail-icon.png">
+    <link rel="icon" href="/images/logos/evail-icon.png" sizes="32x32">
     <title>Evail</title>
   </head>
 
@@ -31,5 +31,9 @@ import FooterView from "@/components/FooterView.vue";
 </template>
 
 <style scoped>
+link[rel="icon"] {
+  width: 32px;  /* Ajustez selon vos besoins */
+  height: 32px; /* Ajustez selon vos besoins */
+}
 
 </style>
