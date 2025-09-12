@@ -1,0 +1,8 @@
+.filter-animation {
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.filter-animation:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+    transform: scale(1.01);
+}

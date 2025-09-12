@@ -8,7 +8,6 @@ export default defineComponent({
 
   setup() {
 
-    //Voir /model/Travel.ts pour comprendre pourquoi j'ai fait une liste de voyages.
     const travels_list = ref<Travel[]>([]);
     const selected_travel = ref<number>();
 
@@ -23,11 +22,16 @@ export default defineComponent({
       let casamance_d3 : string = "Nous avons également soigné beaucoup de blessures liées à ces maladies. Notre équipe plus que jamais soudée par les difficultés n’a pas eu peur de se confronter à la dureté de la vie des habitants."
       let casamance_description : string[] = [casamance_d1, casamance_d2, casamance_d3]
 
-      let Casamance : Travel = new Travel("Casamance", "2024", casamance_description, "Du Casamance aux parcelles de Dakar", []);
-      let Senegal : Travel = new Travel("Sénégal", "2025", [], "", []);
-      let Togo : Travel = new Travel("Togo", "2025", [], "", []);
-      let Cameroun : Travel = new Travel("Cameroun", "2025", [], "", []);
-      let Inde : Travel = new Travel("Inde", "2025", [], "", []);
+      let casamance_img1 : string = "/images/travels/casamance/casamance-1.jpg";
+      let casamance_img2 : string = "/images/travels/casamance/casamance-2.jpg";
+      let casamance_img3 : string = "/images/travels/casamance/casamance-3.jpg";
+      let casamance_images : string[] = [casamance_img1, casamance_img2, casamance_img3];
+
+      let Casamance : Travel = new Travel("Casamance", "2024", casamance_description, "Du Casamance aux parcelles de Dakar", casamance_images);
+      let Senegal : Travel = new Travel("Sénégal", "2025", ["Ce voyage est à venir"], "Voyage au Sénégal", []);
+      let Togo : Travel = new Travel("Togo", "2025", ["Ce voyage est à venir"], "voyage au Togo", []);
+      let Cameroun : Travel = new Travel("Cameroun", "2025", ["Ce voyage est à venir"], "Voyage au Cameroun", []);
+      let Inde : Travel = new Travel("Inde", "2025", ["Ce voyage est à venir"], "Voyage en Inde", []);
 
       travels_list.value.push(Casamance);
       travels_list.value.push(Senegal);
@@ -48,61 +52,48 @@ export default defineComponent({
 </script>
 
 <template>
-
-  <div class="title-container background_primary-color text-white-color">
-    <p class="title_size">Découvrez nos voyages humanitaires.</p>
-    <p class="title_size">L’aide ne connait pas de frontières.</p>
-  </div>
-
-  <div class="travel-timeline">
-    <div class="travel-items">
-      <div v-for="travel in travels_list">
-        <div class="travel-circle">{{travel.getStartDate()}}</div>
-        <div class="travel-circle-date">{{ travel.getDestination() }}</div>
+  <div class="full-width-panel flex flex-col align-center justify-center">
+    <div class="title-container background-primary text-white">
+      <p>Nos voyages humanitaires.</p>
+      <p>L'aide sans frontières.</p>
+    </div>
+    <div class="travel-timeline">
+      <div class="travel-items">
+        <div v-for="(travel, index) in travels_list" :key="index">
+            <div class="travel-circle" :class="index === selected_travel ? 'background-primary' : 'background-travel'" @click="selected_travel = index">{{travel.getStartDate()}}</div>
+            <div class="travel-circle-date"     >{{ travel.getDestination() }}</div>
+        </div>
       </div>
     </div>
-  </div>
+    <div class="flex travel-container full-width-panel align-center justify-center" >
 
-  <div class="travel-information-container">
-    <div class="travel-title-container background-secondary-color text-white-color disappear_on_mobile">
-      <p class="subtitle_size">{{ travels_list[selected_travel]?.getTitle()}}</p>
-    </div>
-
-    <div class="travel-information">
-      <div v-for="description in travels_list[selected_travel]?.getDescriptionParagraph()">
-        <p class="text_paragraph">{{description}}</p>
+      <div class="subtitle-container flex-1 text-white background-secondary justify-center align-center flex self-stretch">
+        <p>{{ travels_list[selected_travel]?.getTitle()}}</p>
       </div>
 
-    </div>
-
-    <div style="flex:1;">
-
-      <div style="display: flex; flex-direction: row; align-self: stretch">
-        <div style="display: flex; flex-direction: column; flex: 1">
-          <div class="big_image">
-            <img src="/images/travels/casamance/casamance-7.jpg" style="width: 100%; height: 100%; object-fit: cover;">
-          </div>
-          <div class="little_image">
-            <img src="/images/travels/casamance/casamance-5.jpg" style="width: 100%; height: 100%; object-fit: cover;">
-          </div>
+      <div class="paragraph-container flex flex-col align-center justify-center text-paragraph flex-2">
+        <div v-for="description in travels_list[selected_travel]?.getDescriptionParagraph()" class="text-paragraph-padding ">
+          <p>{{description}}</p>
         </div>
+      </div>
 
-        <div style="display: flex; flex-direction: column; flex: 1">
-          <div class="little_image">
-            <img src="/images/travels/casamance/casamance-1.jpg" style="width: 100%; height: 100%; object-fit: cover;">
-          </div>
-          <div class="big_image" >
-            <img src="/images/travels/casamance/casamance-2.jpg" style="width: 100%; height: 100%; object-fit: cover;">
-          </div>
-        </div>
-
-        <div style="display: flex; flex-direction: column; flex: 1">
-          <div class="middle_image" >
-            <img src="/images/travels/casamance/casamance-3.jpg" style="width: 100%; height: 100%; object-fit: cover;">
-          </div>
-          <div class="middle_image">
-            <img src="/images/travels/casamance/casamance-4.jpg" style="width: 100%; height: 100%; object-fit: cover;">
-
+      <div class="flex flex-1 self-stretch" style="max-height: 50vh">
+        <div
+            v-if="travels_list[selected_travel]?.getImagesPath().length > 0"
+            class="travel-images-container">
+          <div class="travel-images-grid">
+            <div
+                v-for="(img, i) in travels_list[selected_travel]?.getImagesPath()"
+                :key="i"
+                class="image-item"
+            >
+              <img
+                  :src="img"
+                  :alt="`Photo ${i+1} du voyage en ${travels_list[selected_travel]?.getDestination()}`"
+                  class="travel-image"
+                  loading="lazy"
+              />
+            </div>
           </div>
         </div>
       </div>
@@ -116,97 +107,137 @@ export default defineComponent({
 
 
 </template>
-
 <style scoped>
 
-
-.travel-information-container
-{
-  display: flex;
+.travel-container {
   flex-direction: row;
-  justify-content: center;
-  align-items: center;
+  overflow-y: auto;
 }
 
-.travel-information
-{
-  display : flex;
-  flex-direction: column;
-  flex: 2;
-  justify-content: center;
-  align-items: center;
-  padding: 2vw;
+.travel-images-container {
+  padding: 1rem;
+  overflow-y: auto;
 }
 
-.travel-image
-{
-  flex: 1;
-}
-
-.travel-title-container
-{
+.travel-images-grid {
   display: flex;
-  flex: 0.7;
-  justify-content: center;
-  align-items: center;
-  align-self: stretch;
-  padding: 2vw;
-
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-top: 1rem;
 }
 
-
-
-.travel-information-container
-{
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  width: 100vw;
-  height: auto;
+.image-item {
+  position: relative;
+  flex: 1 1 500px;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  aspect-ratio: 4/3;
 }
+
+.travel-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.travel-image:hover {
+  transform: scale(1.05);
+}
+
+@media (max-width: 1024px) {
+  .travel-container {
+    flex-direction: column;
+    overflow: hidden;
+  }
+
+  .travel-images-container {
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory;
+  }
+
+  .travel-images-grid {
+    flex-wrap: nowrap;
+    gap: 1rem;
+  }
+
+  .image-item {
+    flex: 0 0 240px;
+    aspect-ratio: 4/3;
+    scroll-snap-align: start;
+  }
+
+  .subtitle-container
+  {
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+  }
+}
+
+@media (max-width: 800px) {
+  .image-item {
+    flex: 0 0 200px;
+  }
+}
+
+@media (max-width: 480px) {
+  .image-item {
+    flex: 0 0 100%;
+  }
+}
+
 
 .travel-timeline {
   display: flex;
   justify-content: start;
   width: 80%;
-  margin: 3vw auto;
+  margin: 3rem auto;
   position: relative;
-  padding-top: 1vw;
+  padding-top: 1rem;
 }
+
 
 .travel-timeline::before {
   content: '';
   position: absolute;
-  top: 50%;
+  top: 45%;
   left: 0;
   width: 100%;
-  height: 0.2vw;
-  background-color: #b58632;
+  height: 0.2rem;
+  background-color: var(--primary-color);
   z-index: -1;
 }
 
 .travel-circle {
-  width: 2.5vw;
-  height: 2.5vw;
-  background-color: #b58632;
+  width: 2.5rem;
+  height: 2.5rem;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   color: white;
-  margin-bottom: 0.5vw;
-  font-size: 0.8vw;
+  margin-bottom: 0.5rem;
+  font-size: 0.8rem;
   position: relative;
   z-index: 1;
 }
 
+.travel-circle:hover
+{
+  cursor: pointer;
+}
+
 .travel-circle-date {
   color: black;
-  font-size: 0.8vw;
+  font-size: 0.8rem;
   font-weight: bold;
   text-align: center;
-  margin-top: 0.5vw; /* Pour espacer la date du cercle */
+  margin-top: 0.5rem;
 }
 
 .travel-items {
@@ -216,68 +247,16 @@ export default defineComponent({
   justify-content: space-between;
 }
 
-.big_image
-{
-  height:25vh;
 
+.travel-images-grid img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
-.middle_image
-{
-  height:22.5vh;
-}
-
-.little_image
-{
-  height:20vh;
-}
-
-@media (max-width: 500px) {
-
-  .big_image
-  {
-
-    height:15vh;
-  }
-
-  .middle_image
-  {
-    height:12.5vh;
-  }
-
-  .little_image
-  {
-    height:10vh;
-  }
-
-  .travel-timeline {
-    width: 90%;
-    margin: 5vw auto;
-    padding-top: 2vw;
-  }
-
-  .travel-timeline::before {
-    height: 0.5vw;
-  }
-
-  .travel-circle {
-    width: 5vw;
-    height: 5vw;
-    font-size: 1.5vw;
-  }
-
-  .travel-circle-date {
-    font-size: 1.5vw;
-    margin-top: 1vw;
-  }
-
-  .travel-items {
-    width: 90vw;
-  }
-
+@media (max-width: 1024px) {
 
 }
-
 
 
 </style>

@@ -1,100 +1,49 @@
-<script setup>
-
+<script lang="ts">
 </script>
 
+
 <template>
-  <div class="home_content">
-
-    <div class="home_background_filter">
-
-      <div class="home_information">
-
-        <img class="home_logo" src="/images/logos/red_evail_logo.png" alt="Evail logo" >
-
-        <p class="home_title text-white-color">Evail | Humanitaire</p>
-
+  <div class="home-container">
+    <div class="filter background-filter-black filter-animation flex align-center justify-center">
+      <div class="home-information title_size">
+        <img src="/images/logos/red_evail_logo.png" alt="logo">
+        <p class="text-white">Evail | Humanitaire</p>
       </div>
-
     </div>
-
   </div>
+
 </template>
+
 
 <style scoped>
 
-.home_content {
-  width: 100vw;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
+.home-container {
+  height: 85vh;
   background-image: url("/images/backgrounds/home_background.jpg");
   background-size: cover;
-  background-position: center; /* Centrer le background pour éviter le dépassement */
+  background-position: center;
   background-repeat: no-repeat;
 }
 
-.home_background_filter {
-  width: 100vw;
-  height: 100vh;
-  background-color: rgba(0, 0, 0, 0.5); /* Couleur de fond pour le filtre */
-  z-index: 2;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.home-container img {
+  max-width: 30rem;
+  max-height: 50vh;
 }
 
-.home_information {
-  max-width: 100vw;
+.home-information {
   display: flex;
   flex-direction: row;
   align-items: center;
-}
-
-.home_logo {
-  max-width: 20vw;
-  height: auto;
-}
-
-.home_title {
-  font-size: 5vw;
-}
-
-@media (max-width: 1500px) {
-
-}
-
-@media (max-width: 1200px) {
-
-  .home_title
-  {
-    font-size: 7vw;
-  }
-
-  .home_logo
-  {
-    max-width: 30vw;
-  }
-
+  justify-content: center;
+  text-align: center;
+  font-size: 2rem;
 }
 
 @media (max-width: 800px) {
-
-  .home_information
-  {
+  .home-information {
     flex-direction: column;
+    text-align: center;
   }
-
-}
-
-@media (max-width: 500px)
-{
-
-  .home_logo
-  {
-    width: 70vh;
-    height: auto;
-  }
-
 }
 
 </style>
