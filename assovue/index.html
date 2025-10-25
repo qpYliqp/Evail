@@ -1,11 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="/images/logos/evail-icon.png" sizes="16x16">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="/images/logos/evail-icon.png" sizes="16x16" />
     <title>Evail</title>
-</head>
-  <body>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: '#A92831',
+              secondary: '#620D14',
+              travel: '#b58632',
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body class="min-h-screen bg-white text-black antialiased">
     <div id="app"></div>
     <script type="module" src="/src/main.js"></script>
   </body>

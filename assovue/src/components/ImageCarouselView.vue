@@ -30,7 +30,7 @@ export default defineComponent({
 </script>
 
 <template>
-  <div class="carousel-container">
+  <div class="flex flex-col items-center text-black">
     <swiper
       :modules="modules"
       :navigation="{
@@ -40,62 +40,15 @@ export default defineComponent({
       :slides-per-group="1"
       :slides-per-view="1"
       :loop="true"
-      style="width: 100%; position: relative;"
+      class="relative w-full"
     >
-      <div class="swiper-button-prev swiper-button-prev-2"></div>
-      <div class="swiper-button-next swiper-button-next-2"></div>
-      <swiper-slide v-for="image in images_path" :key="image">
-        <div class="carousel-slide">
-          <img :src="image" :alt="`Image ${index + 1}`"
-          />
+      <div class="swiper-button-prev swiper-button-prev-2 !absolute !left-2 !top-1/2 !h-auto !w-auto !-translate-y-1/2 p-6 text-primary font-bold"></div>
+      <div class="swiper-button-next swiper-button-next-2 !absolute !right-2 !top-1/2 !h-auto !w-auto !-translate-y-1/2 p-6 text-primary font-bold"></div>
+      <swiper-slide v-for="(image, index) in images_path" :key="image">
+        <div class="flex h-[82vh] w-full items-center justify-center">
+          <img :src="image" :alt="`Image ${index + 1}`" class="h-full w-full select-none object-cover" />
         </div>
       </swiper-slide>
     </swiper>
   </div>
 </template>
-
-<style scoped>
-.carousel-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: start;
-  align-items: center;
-  color: black;
-}
-
-.carousel-slide {
-  width: 100%;
-  height: 82vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.carousel-slide img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  user-select: none;
-}
-
-.swiper-button-next-2,
-.swiper-button-prev-2 {
-  position: absolute !important;
-  width: auto !important;
-  height: auto !important;
-  margin-top: 0 !important;
-  z-index: 10 !important;
-  color: var(--primary-color);
-  padding: 1.5rem;
-}
-
-.swiper-button-next-2 {
-  right: 0.5rem;
-  font-weight: bold;
-}
-
-.swiper-button-prev-2 {
-  left: 0.5rem;
-  font-weight: bold;
-}
-</style>
