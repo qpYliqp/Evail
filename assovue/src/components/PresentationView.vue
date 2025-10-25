@@ -2,41 +2,73 @@
 </script>
 
 <template>
-  <section class="w-full">
-    <div class="flex w-full flex-col items-center justify-center gap-2 p-6 text-center text-4xl font-semibold text-primary md:text-5xl">
-      <p>Trois Femmes</p>
-      <p>Une même ambition</p>
-    </div>
-    <div
-      class="flex w-full flex-col items-center justify-between gap-10 bg-primary px-6 py-12 text-white xl:flex-row xl:items-center xl:justify-evenly"
-    >
+  <section
+    id="presentation"
+    class="relative w-full overflow-hidden bg-gradient-to-b from-transparent via-white/5 to-transparent py-20"
+  >
+    <div class="pointer-events-none absolute inset-0 bg-glass-pattern opacity-40"></div>
+    <div class="relative z-10 mx-auto flex w-full max-w-6xl flex-col gap-16 px-6">
+      <div class="flex flex-col items-center text-center">
+        <p class="text-sm uppercase tracking-[0.35em] text-primary/60">Notre histoire</p>
+        <h2 class="mt-3 text-3xl font-bold text-white md:text-5xl">Trois femmes, une même ambition</h2>
+        <p class="mt-5 max-w-2xl text-lg text-white/75">
+          Un projet porté par la solidarité et l&rsquo;expertise médicale, construit
+          pour répondre aux besoins des populations les plus fragiles.
+        </p>
+      </div>
       <div
-        class="flex flex-1 items-center justify-center self-stretch rounded-lg bg-secondary px-8 py-10 text-center text-2xl font-semibold"
+        class="grid grid-cols-1 gap-10 rounded-3xl bg-white/5 p-10 shadow-2xl backdrop-blur-xl md:grid-cols-[1.2fr_1fr]"
       >
-        <p>Notre Histoire</p>
-      </div>
-      <div class="flex flex-[2] flex-col items-center justify-center gap-6 px-4 text-base md:text-lg">
-        <p class="pb-8">
-          EVAIL humanitaire est née d’une amitié, d’un rêve commun : celui d’aider les autres au-delà des frontières. Pour
-          concrétiser ce projet Annie, Minette et Yaye l’ont porté durant deux ans.
-        </p>
-        <p class="pb-8">
-          Annie, Minette et Yaye ont porté ce projet, elles l'ont soigneusement peaufiné. Elles se sont données comme premier
-          objectif de voyager au Sénégal. En France, elles parlent de ce projet à leurs collègues. Sitôt, une équipe de
-          soignants est montée.
-        </p>
-        <p class="pb-8">
-          Les actions se multiplient telles que le démarchage en pharmacies partenaires ou pour des médicaments, en magasin pour
-          des fournitures scolaires ou bien en recherche de bénévoles ou encore en organisation de réunions et de rencontres
-          promotionnelles pour l'association.
-        </p>
-        <p>
-          Ce premier voyage relevé avec brio, ce trio ne souhaite pas s’arrêter en si bon chemin et compte maintenant une équipe
-          de plus de 30 soignants ainsi que de nouvelles actions à travers la France et le monde entier.
-        </p>
-      </div>
-      <div class="flex flex-1 justify-end">
-        <img src="/images/staff/staff.png" alt="staff-image" class="h-full max-w-full object-contain" />
+        <div class="flex flex-col justify-between gap-8">
+          <div class="rounded-3xl border border-white/10 bg-white/5 p-6 shadow-lg backdrop-blur">
+            <p class="text-lg font-semibold text-white">Une aventure humaine</p>
+            <p class="mt-3 text-base text-white/80">
+              EVAIL humanitaire est née d’une amitié, d’un rêve commun : celui
+              d’aider les autres au-delà des frontières. Pour concrétiser ce
+              projet Annie, Minette et Yaye l’ont porté durant deux ans.
+            </p>
+          </div>
+          <div class="rounded-3xl border border-white/10 bg-white/5 p-6 shadow-lg backdrop-blur">
+            <p class="text-lg font-semibold text-white">Une équipe engagée</p>
+            <p class="mt-3 text-base text-white/80">
+              Annie, Minette et Yaye ont porté ce projet et se sont données pour
+              premier objectif de voyager au Sénégal. En France, une équipe de
+              soignants se forme rapidement, prête à soutenir la mission.
+            </p>
+          </div>
+          <div class="rounded-3xl border border-white/10 bg-white/5 p-6 shadow-lg backdrop-blur">
+            <p class="text-lg font-semibold text-white">Des actions concrètes</p>
+            <p class="mt-3 text-base text-white/80">
+              Le démarchage en pharmacies partenaires, la recherche de
+              bénévoles, la collecte de fournitures et les rencontres
+              promotionnelles se multiplient pour soutenir l'association.
+            </p>
+          </div>
+          <div class="rounded-3xl border border-white/10 bg-white/5 p-6 shadow-lg backdrop-blur">
+            <p class="text-lg font-semibold text-white">Une ambition sans limites</p>
+            <p class="mt-3 text-base text-white/80">
+              Le premier voyage réussi, l’équipe compte désormais plus de trente
+              soignants et multiplie les initiatives à travers la France et le
+              monde.
+            </p>
+          </div>
+        </div>
+        <div class="flex flex-col items-center justify-center gap-6">
+          <div class="w-full rounded-[2.5rem] border border-white/10 bg-black/30 p-8 text-center shadow-lg backdrop-blur-xl">
+            <p class="text-xl font-semibold text-white">Une vision partagée</p>
+            <p class="mt-4 text-base text-white/75">
+              Ensemble, elles incarnent une association moderne qui s&rsquo;appuie
+              sur des compétences pluridisciplinaires pour imaginer un futur
+              solidaire et durable.
+            </p>
+          </div>
+          <img
+            src="/images/staff/staff.png"
+            alt="Le trio fondateur d'Evail"
+            class="w-full max-w-md rounded-[2.5rem] border border-white/10 object-cover shadow-xl"
+            loading="lazy"
+          />
+        </div>
       </div>
     </div>
   </section>

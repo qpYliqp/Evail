@@ -11,69 +11,89 @@ export default defineComponent({
 </script>
 
 <template>
-  <section class="w-full">
-    <div class="flex w-full flex-col items-center justify-center bg-primary p-6 text-center text-4xl font-semibold text-white">
-      <p>Nos actions</p>
-    </div>
-    <div class="flex w-full flex-col items-start justify-start gap-8 px-4 py-10 lg:flex-row">
-      <div class="hidden h-full w-full max-w-xl overflow-hidden rounded-lg lg:block lg:flex-1">
-        <img src="/images/actions/action-image-1.jpg" alt="action-image" class="h-full w-full object-cover" />
+  <section id="actions" class="relative w-full overflow-hidden py-20">
+    <div class="pointer-events-none absolute inset-0 bg-gradient-to-b from-secondary/30 via-black/40 to-midnight/80"></div>
+    <div class="relative z-10 mx-auto flex w-full max-w-6xl flex-col gap-14 px-6">
+      <div class="flex flex-col items-center text-center">
+        <p class="text-sm uppercase tracking-[0.35em] text-primary/70">Nos actions</p>
+        <h2 class="mt-3 text-3xl font-bold md:text-5xl">Soigner, un devoir, une priorité</h2>
+        <p class="mt-4 max-w-3xl text-base text-white/70">
+          Chaque mission est construite avec les communautés locales pour
+          apporter un soutien médical durable et respectueux des besoins
+          spécifiques.
+        </p>
       </div>
-      <div class="flex w-full flex-col items-center justify-center gap-6 lg:flex-[2]">
-        <div class="flex w-full flex-col items-center justify-center p-4 text-center text-3xl font-semibold text-primary">
-          <p>Soigner, un devoir, une priorité.</p>
+      <div class="grid grid-cols-1 gap-10 lg:grid-cols-[1.1fr_1.4fr]">
+        <div class="hidden overflow-hidden rounded-[2.5rem] border border-white/10 lg:block">
+          <img
+            src="/images/actions/action-image-1.jpg"
+            alt="Bénévoles d'Evail sur le terrain"
+            class="h-full w-full object-cover"
+            loading="lazy"
+          />
         </div>
-        <div class="flex w-full flex-col items-center justify-center gap-6 px-4 text-center text-base md:text-lg">
-          <p class="pb-4">
-            Notre souhait profond est de soigner, dans le champs de nos compétences chaque personne qui en a le besoin.
+        <div
+          class="flex flex-col gap-8 rounded-[2.5rem] border border-white/10 bg-white/5 p-8 shadow-2xl backdrop-blur-xl"
+        >
+          <p class="text-base text-white/80">
+            Notre souhait profond est de soigner, dans le champ de nos
+            compétences, chaque personne qui en a le besoin.
           </p>
-          <p class="pb-4">
-            Animé par ce devoir, nous sommes aujourd’hui une équipe composée d’infirmiers, médecins, d’aides-soignants et bien
-            d'autres professionnels de la santé publique.
+          <p class="text-base text-white/80">
+            Animée par ce devoir, notre équipe est composée d’infirmiers,
+            médecins, aides-soignants et de nombreux autres professionnels de la
+            santé publique.
           </p>
-          <p class="pb-4">
-            Nous voyageons depuis peu et rencontrons les populations sur le terrain pour comprendre leurs enjeux sanitaires et
-            les préoccupations des habitants. Nous partons pendant deux semaines, dans chaque ville, même les plus reculées où
-            nous faisons de la prévention sur des pathologies propres aux pays confrontés aux développements et soignons des
-            maladies qui ne nécessitent pas d’interventions chirurgicales.
+          <p class="text-base text-white/80">
+            Nous voyageons depuis peu pour rencontrer les populations sur le
+            terrain, comprendre leurs enjeux sanitaires et répondre aux
+            préoccupations locales avec humilité et expertise.
           </p>
-          <p class="pb-4">
-            A terme, nous souhaiterions en collaboration avec les localités, permettre aux pays d’avoir des clés nécessaires pour
-            être auto-suffisants en matière de préventions et de dépistage . Donc d’encourager les initiatives locales et
-            pérenniser l’éducation thérapeutique reçue.
+          <p class="text-base text-white/80">
+            À terme, nous souhaitons donner à chaque communauté les clés pour
+            être autonome en prévention, dépistage et éducation thérapeutique.
           </p>
-          <p class="cursor-pointer text-lg text-blue-600 underline" @click="pdf.openPDF">En savoir plus</p>
-          <div class="flex w-full flex-col items-center justify-center gap-8 pt-8 lg:flex-row">
-            <div class="flex w-full max-w-xs flex-col items-center justify-center text-center">
-              <div class="mb-3 flex justify-center">
-                <div class="mx-1 flex h-10 w-8 items-center justify-center border-2 border-primary text-2xl font-bold text-primary">1</div>
-                <div class="mx-1 flex h-10 w-8 items-center justify-center border-2 border-primary text-2xl font-bold text-primary">3</div>
-                <div class="mx-1 flex h-10 w-8 items-center justify-center border-2 border-primary text-2xl font-bold text-primary">3</div>
-                <div class="mx-1 flex h-10 w-8 items-center justify-center border-2 border-primary text-2xl font-bold text-primary">6</div>
-              </div>
-              <p class="text-sm font-semibold tracking-wide">CONSULTATIONS</p>
-            </div>
-
-            <div class="flex w-full max-w-xs flex-col items-center justify-center text-center">
-              <div class="mb-3 flex justify-center">
-                <div class="mx-1 flex h-10 w-8 items-center justify-center border-2 border-primary text-2xl font-bold text-primary">0</div>
-                <div class="mx-1 flex h-10 w-8 items-center justify-center border-2 border-primary text-2xl font-bold text-primary">2</div>
-                <div class="mx-1 flex h-10 w-8 items-center justify-center border-2 border-primary text-2xl font-bold text-primary">5</div>
-                <div class="mx-1 flex h-10 w-8 items-center justify-center border-2 border-primary text-2xl font-bold text-primary">0</div>
-              </div>
-              <p class="text-sm font-semibold tracking-wide">MÉDICAMENTS RÉCOLTÉS</p>
-            </div>
-
-            <div class="flex w-full max-w-xs flex-col items-center justify-center text-center">
-              <div class="mb-3 flex justify-center">
-                <div class="mx-1 flex h-10 w-8 items-center justify-center border-2 border-primary text-2xl font-bold text-primary">0</div>
-                <div class="mx-1 flex h-10 w-8 items-center justify-center border-2 border-primary text-2xl font-bold text-primary">0</div>
-                <div class="mx-1 flex h-10 w-8 items-center justify-center border-2 border-primary text-2xl font-bold text-primary">3</div>
-                <div class="mx-1 flex h-10 w-8 items-center justify-center border-2 border-primary text-2xl font-bold text-primary">5</div>
-              </div>
-              <p class="text-sm font-semibold tracking-wide">SOIGNANTS MOBILISÉS</p>
-            </div>
-          </div>
+          <button
+            type="button"
+            class="group inline-flex w-fit items-center gap-3 rounded-full border border-primary/50 bg-primary/70 px-6 py-3 text-sm font-semibold uppercase tracking-wide text-white transition-all duration-300 hover:-translate-y-1 hover:bg-primary"
+            @click="pdf.openPDF"
+          >
+            <span>Consulter le rapport</span>
+            <span class="inline-flex h-7 w-7 items-center justify-center rounded-full bg-white/15 text-lg font-bold transition-transform duration-300 group-hover:translate-x-1">
+              ↗
+            </span>
+          </button>
+        </div>
+      </div>
+      <div class="grid grid-cols-1 gap-6 pt-4 sm:grid-cols-3">
+        <div
+          class="group flex flex-col items-center gap-3 rounded-[1.8rem] border border-white/10 bg-black/40 p-8 text-center shadow-xl transition-transform duration-300 hover:-translate-y-2 hover:border-primary/40 hover:bg-primary/30"
+        >
+          <div class="text-4xl font-extrabold text-white">1 336</div>
+          <p class="text-xs uppercase tracking-[0.3em] text-white/60">Consultations</p>
+          <p class="text-sm text-white/60">
+            Des consultations préventives et curatives réalisées avec les
+            habitants sur place.
+          </p>
+        </div>
+        <div
+          class="group flex flex-col items-center gap-3 rounded-[1.8rem] border border-white/10 bg-black/40 p-8 text-center shadow-xl transition-transform duration-300 hover:-translate-y-2 hover:border-primary/40 hover:bg-primary/30"
+        >
+          <div class="text-4xl font-extrabold text-white">2 050</div>
+          <p class="text-xs uppercase tracking-[0.3em] text-white/60">Médicaments récoltés</p>
+          <p class="text-sm text-white/60">
+            Des traitements et matériels collectés grâce à la générosité de nos
+            partenaires.
+          </p>
+        </div>
+        <div
+          class="group flex flex-col items-center gap-3 rounded-[1.8rem] border border-white/10 bg-black/40 p-8 text-center shadow-xl transition-transform duration-300 hover:-translate-y-2 hover:border-primary/40 hover:bg-primary/30"
+        >
+          <div class="text-4xl font-extrabold text-white">35</div>
+          <p class="text-xs uppercase tracking-[0.3em] text-white/60">Soignants mobilisés</p>
+          <p class="text-sm text-white/60">
+            Une équipe pluridisciplinaire au cœur de chaque mission.
+          </p>
         </div>
       </div>
     </div>

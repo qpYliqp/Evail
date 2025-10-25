@@ -9,7 +9,9 @@ import FooterView from "@/components/FooterView.vue";
 </script>
 
 <template>
-  <main class="min-h-screen w-screen overflow-x-hidden bg-white text-black">
+  <main
+    class="min-h-screen w-screen overflow-x-hidden bg-transparent font-display text-white"
+  >
     <HomeView />
     <PresentationView />
     <Staffview />
