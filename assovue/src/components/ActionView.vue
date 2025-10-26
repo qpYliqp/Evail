@@ -1,78 +1,77 @@
-<script lang="ts">
-import { defineComponent } from "vue";
-import { PDFViewer } from "@/model/PDFViewer";
+<script setup lang="ts">
+import { PDFViewer } from '@/model/PDFViewer'
 
-export default defineComponent({
-  setup() {
-    const pdf: PDFViewer = new PDFViewer("/pdf/action/RAPPORT-AMP-AEH.pdf");
-    return { pdf };
-  },
-});
+const pdfViewer = new PDFViewer('/pdf/action/RAPPORT-AMP-AEH.pdf')
+
+const focusPoints = [
+  'Des consultations itinérantes pour atteindre les villages isolés',
+  'Des ateliers de prévention sur le diabète, l’hypertension et les IST',
+  'Des partenariats avec les structures locales pour pérenniser les actions',
+]
+
+const metrics = [
+  { value: '1 336', label: 'consultations réalisées' },
+  { value: '2 050', label: 'boîtes de médicaments collectées' },
+  { value: '35', label: 'professionnels de santé mobilisés' },
+]
+
+const openReport = () => {
+  pdfViewer.openPDF()
+}
 </script>
 
 <template>
-  <section class="w-full">
-    <div class="flex w-full flex-col items-center justify-center bg-primary p-6 text-center text-4xl font-semibold text-white">
-      <p>Nos actions</p>
-    </div>
-    <div class="flex w-full flex-col items-start justify-start gap-8 px-4 py-10 lg:flex-row">
-      <div class="hidden h-full w-full max-w-xl overflow-hidden rounded-lg lg:block lg:flex-1">
-        <img src="/images/actions/action-image-1.jpg" alt="action-image" class="h-full w-full object-cover" />
-      </div>
-      <div class="flex w-full flex-col items-center justify-center gap-6 lg:flex-[2]">
-        <div class="flex w-full flex-col items-center justify-center p-4 text-center text-3xl font-semibold text-primary">
-          <p>Soigner, un devoir, une priorité.</p>
+  <section id="actions" class="section-muted">
+    <div class="mx-auto grid max-w-6xl gap-12 px-4 section-spacing sm:px-6 lg:grid-cols-2 lg:items-center lg:px-8">
+      <div class="flex flex-col gap-6" data-animate="reveal">
+        <span class="badge-pill">Nos actions</span>
+        <h2 class="font-heading heading-2 text-gray-900">
+          Soigner, prévenir et transmettre sur le terrain
+        </h2>
+        <p class="text-fluid text-gray-700">
+          Chaque mission est une aventure collective : nous rencontrons les communautés, écoutons leurs priorités sanitaires et
+          proposons des réponses adaptées. Des consultations aux actions de prévention, nous favorisons l’accès aux soins tout en
+          renforçant les connaissances locales.
+        </p>
+        <ul class="space-y-3 text-fluid text-gray-700">
+          <li v-for="point in focusPoints" :key="point" class="flex items-start gap-3">
+            <span class="mt-1 inline-flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-primary text-xs font-semibold text-white">✓</span>
+            <span>{{ point }}</span>
+          </li>
+        </ul>
+        <button type="button" class="btn-secondary mt-2" @click="openReport">
+          Consulter le rapport de mission
+        </button>
+        <div class="grid gap-4 pt-4 sm:grid-cols-3">
+          <div
+            v-for="metric in metrics"
+            :key="metric.label"
+            class="rounded-2xl border border-primary/10 bg-white/80 p-4 text-center backdrop-blur"
+          >
+            <p class="font-heading text-xl text-primary">{{ metric.value }}</p>
+            <p class="text-xs font-medium uppercase tracking-wide text-gray-600">{{ metric.label }}</p>
+          </div>
         </div>
-        <div class="flex w-full flex-col items-center justify-center gap-6 px-4 text-center text-base md:text-lg">
-          <p class="pb-4">
-            Notre souhait profond est de soigner, dans le champs de nos compétences chaque personne qui en a le besoin.
-          </p>
-          <p class="pb-4">
-            Animé par ce devoir, nous sommes aujourd’hui une équipe composée d’infirmiers, médecins, d’aides-soignants et bien
-            d'autres professionnels de la santé publique.
-          </p>
-          <p class="pb-4">
-            Nous voyageons depuis peu et rencontrons les populations sur le terrain pour comprendre leurs enjeux sanitaires et
-            les préoccupations des habitants. Nous partons pendant deux semaines, dans chaque ville, même les plus reculées où
-            nous faisons de la prévention sur des pathologies propres aux pays confrontés aux développements et soignons des
-            maladies qui ne nécessitent pas d’interventions chirurgicales.
-          </p>
-          <p class="pb-4">
-            A terme, nous souhaiterions en collaboration avec les localités, permettre aux pays d’avoir des clés nécessaires pour
-            être auto-suffisants en matière de préventions et de dépistage . Donc d’encourager les initiatives locales et
-            pérenniser l’éducation thérapeutique reçue.
-          </p>
-          <p class="cursor-pointer text-lg text-blue-600 underline" @click="pdf.openPDF">En savoir plus</p>
-          <div class="flex w-full flex-col items-center justify-center gap-8 pt-8 lg:flex-row">
-            <div class="flex w-full max-w-xs flex-col items-center justify-center text-center">
-              <div class="mb-3 flex justify-center">
-                <div class="mx-1 flex h-10 w-8 items-center justify-center border-2 border-primary text-2xl font-bold text-primary">1</div>
-                <div class="mx-1 flex h-10 w-8 items-center justify-center border-2 border-primary text-2xl font-bold text-primary">3</div>
-                <div class="mx-1 flex h-10 w-8 items-center justify-center border-2 border-primary text-2xl font-bold text-primary">3</div>
-                <div class="mx-1 flex h-10 w-8 items-center justify-center border-2 border-primary text-2xl font-bold text-primary">6</div>
-              </div>
-              <p class="text-sm font-semibold tracking-wide">CONSULTATIONS</p>
-            </div>
+      </div>
 
-            <div class="flex w-full max-w-xs flex-col items-center justify-center text-center">
-              <div class="mb-3 flex justify-center">
-                <div class="mx-1 flex h-10 w-8 items-center justify-center border-2 border-primary text-2xl font-bold text-primary">0</div>
-                <div class="mx-1 flex h-10 w-8 items-center justify-center border-2 border-primary text-2xl font-bold text-primary">2</div>
-                <div class="mx-1 flex h-10 w-8 items-center justify-center border-2 border-primary text-2xl font-bold text-primary">5</div>
-                <div class="mx-1 flex h-10 w-8 items-center justify-center border-2 border-primary text-2xl font-bold text-primary">0</div>
-              </div>
-              <p class="text-sm font-semibold tracking-wide">MÉDICAMENTS RÉCOLTÉS</p>
-            </div>
-
-            <div class="flex w-full max-w-xs flex-col items-center justify-center text-center">
-              <div class="mb-3 flex justify-center">
-                <div class="mx-1 flex h-10 w-8 items-center justify-center border-2 border-primary text-2xl font-bold text-primary">0</div>
-                <div class="mx-1 flex h-10 w-8 items-center justify-center border-2 border-primary text-2xl font-bold text-primary">0</div>
-                <div class="mx-1 flex h-10 w-8 items-center justify-center border-2 border-primary text-2xl font-bold text-primary">3</div>
-                <div class="mx-1 flex h-10 w-8 items-center justify-center border-2 border-primary text-2xl font-bold text-primary">5</div>
-              </div>
-              <p class="text-sm font-semibold tracking-wide">SOIGNANTS MOBILISÉS</p>
-            </div>
+      <div class="relative" data-animate="reveal">
+        <div class="absolute -inset-6 hidden rounded-[2rem] bg-secondary/10 blur-2xl lg:block"></div>
+        <div class="relative overflow-hidden rounded-[1.75rem] shadow-soft">
+          <picture>
+            <source
+              srcset="/images/actions/action-image-1.jpg 640w, /images/actions/action-image-1.jpg 1280w"
+              sizes="(min-width: 1024px) 45vw, 100vw"
+            />
+            <img
+              src="/images/actions/action-image-1.jpg"
+              alt="Consultation médicale lors d’une mission Evail"
+              class="h-full w-full object-cover"
+              loading="lazy"
+            />
+          </picture>
+          <div class="absolute inset-x-6 bottom-6 rounded-2xl bg-white/85 p-4 text-sm text-gray-700 shadow-lg backdrop-blur">
+            <p class="font-semibold text-primary">Accompagnement continu</p>
+            <p>Préparation, logistique, suivi : chaque étape est coordonnée avec les partenaires locaux.</p>
           </div>
         </div>
       </div>
