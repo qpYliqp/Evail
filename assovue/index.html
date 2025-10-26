@@ -4,6 +4,15 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" href="/images/logos/evail-icon.png" sizes="16x16" />
+    <link
+      rel="preconnect"
+      href="https://fonts.googleapis.com"
+    />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Merriweather:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
     <title>Evail</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -14,11 +23,70 @@
               primary: '#A92831',
               secondary: '#620D14',
               travel: '#b58632',
+              sand: '#f7f3ef',
+              dusk: '#f0e7e6',
+              slate: '#1f2933',
+            },
+            fontFamily: {
+              heading: ['"Merriweather"', 'serif'],
+              body: ['"Inter"', 'sans-serif'],
             },
           },
         },
       };
     </script>
+    <style>
+      :root {
+        color-scheme: light;
+        --radius-sm: 8px;
+        --radius-md: 12px;
+        --radius-lg: 20px;
+        --shadow-card: 0 8px 24px rgba(0, 0, 0, 0.06);
+        --shadow-hover: 0 12px 32px rgba(0, 0, 0, 0.08);
+        --transition-base: 220ms cubic-bezier(0.2, 0.7, 0.2, 1);
+        --section-spacing-mobile: clamp(2.5rem, 6vw, 3.5rem);
+        --section-spacing-desktop: clamp(4rem, 6vw, 6rem);
+      }
+
+      body {
+        font-family: 'Inter', sans-serif;
+        background: #fcfbf9;
+        color: #1f2933;
+        min-height: 100vh;
+      }
+
+      h1,
+      h2,
+      h3,
+      h4 {
+        font-family: 'Merriweather', serif;
+        letter-spacing: -0.01em;
+      }
+
+      .section-padding {
+        padding-top: var(--section-spacing-mobile);
+        padding-bottom: var(--section-spacing-mobile);
+      }
+
+      @media (min-width: 768px) {
+        .section-padding {
+          padding-top: var(--section-spacing-desktop);
+          padding-bottom: var(--section-spacing-desktop);
+        }
+      }
+
+      .reveal {
+        opacity: 0;
+        transform: translateY(28px);
+        transition: opacity var(--transition-base),
+          transform var(--transition-base);
+      }
+
+      .reveal.is-visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    </style>
   </head>
   <body class="min-h-screen bg-white text-black antialiased">
     <div id="app"></div>

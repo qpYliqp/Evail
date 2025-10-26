@@ -1,21 +1,25 @@
 <script setup>
+import HeaderView from "@/components/HeaderView.vue";
 import HomeView from "@/components/HomeView.vue";
 import PresentationView from "@/components/PresentationView.vue";
-import Staffview from "@/components/Staffview.vue";
 import ActionView from "@/components/ActionView.vue";
+import Staffview from "@/components/Staffview.vue";
 import TravelView from "@/components/TravelView.vue";
 import DonateView from "@/components/DonateView.vue";
 import FooterView from "@/components/FooterView.vue";
 </script>
 
 <template>
-  <main class="min-h-screen w-screen overflow-x-hidden bg-white text-black">
-    <HomeView />
-    <PresentationView />
-    <Staffview />
-    <ActionView />
-    <TravelView />
-    <DonateView />
+  <div class="relative min-h-screen w-full overflow-x-hidden bg-sand text-slate">
+    <HeaderView />
+    <main class="flex flex-col">
+      <HomeView />
+      <PresentationView />
+      <ActionView />
+      <Staffview />
+      <TravelView />
+      <DonateView />
+    </main>
     <FooterView />
-  </main>
+  </div>
 </template>

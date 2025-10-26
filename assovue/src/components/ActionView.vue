@@ -1,80 +1,83 @@
-<script lang="ts">
-import { defineComponent } from "vue";
-import { PDFViewer } from "@/model/PDFViewer";
+<script setup lang="ts">
+import { useScrollReveal } from "@/composables/useScrollReveal";
 
-export default defineComponent({
-  setup() {
-    const pdf: PDFViewer = new PDFViewer("/pdf/action/RAPPORT-AMP-AEH.pdf");
-    return { pdf };
+const { register } = useScrollReveal();
+
+const values = [
+  {
+    title: "Humanité partagée",
+    description:
+      "Chaque rencontre est guidée par l'écoute active et la considération de la personne dans sa globalité, ses forces et ses fragilités.",
+    icon: "heart",
   },
-});
+  {
+    title: "Solidarité durable",
+    description:
+      "Nous co-construisons des parcours de soin et de prévention avec nos partenaires locaux pour faire grandir leur autonomie.",
+    icon: "hands",
+  },
+  {
+    title: "Exigence de soin",
+    description:
+      "Nos équipes pluridisciplinaires partagent des protocoles exigeants pour garantir la qualité et la sécurité des gestes.",
+    icon: "shield",
+  },
+  {
+    title: "Élan joyeux",
+    description:
+      "Nous cultivons un climat chaleureux et optimiste, convaincus que la joie est un moteur de résilience.",
+    icon: "sparkles",
+  },
+];
+
+const iconPaths: Record<string, string> = {
+  heart: "M12 21.35 10.55 20.03C5.4 15.36 2 12.27 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09A6.15 6.15 0 0 1 16.5 3C19.58 3 22 5.42 22 8.5c0 3.77-3.4 6.86-8.55 11.54z",
+  hands: "M2.25 12a2.25 2.25 0 0 1 3.13-.35l3.2 2.4a2.25 2.25 0 0 0 2.77-3.53L8.52 7.97A3.75 3.75 0 0 1 13.2 2.6l4.53 4.52a3.75 3.75 0 0 1-5.3 5.3l-.78-.77",
+  shield: "M12 3 4.5 6v6c0 4.97 3.58 9.27 8.4 10 4.82-.73 8.4-5.03 8.4-10V6L12 3z",
+  sparkles: "M12 2l1.76 5.24L19 9l-5.24 1.76L12 16l-1.76-5.24L5 9l5.24-1.76L12 2z M5 17l1.05 3.15L9 21l-2.95.85L5 25l-1.05-3.15L1 21l2.95-.85L5 17z M19 17l1.05 3.15L23 21l-2.95.85L19 25l-1.05-3.15L15 21l2.95-.85L19 17z",
+};
+
+const getIconPath = (key: string) => iconPaths[key] ?? iconPaths.heart;
 </script>
 
 <template>
-  <section class="w-full">
-    <div class="flex w-full flex-col items-center justify-center bg-primary p-6 text-center text-4xl font-semibold text-white">
-      <p>Nos actions</p>
-    </div>
-    <div class="flex w-full flex-col items-start justify-start gap-8 px-4 py-10 lg:flex-row">
-      <div class="hidden h-full w-full max-w-xl overflow-hidden rounded-lg lg:block lg:flex-1">
-        <img src="/images/actions/action-image-1.jpg" alt="action-image" class="h-full w-full object-cover" />
+  <section
+    id="values"
+    class="section-padding bg-white/70"
+  >
+    <div class="mx-auto flex w-full max-w-6xl flex-col gap-10 px-4 md:px-6">
+      <div class="flex flex-col items-start gap-4" :ref="register">
+        <span class="rounded-full bg-dusk px-4 py-2 text-xs font-semibold uppercase tracking-[0.18em] text-primary">
+          Nos valeurs
+        </span>
+        <h2 class="text-3xl font-bold text-slate md:text-[2.4rem]">
+          Une palette d'attentions qui fait du bien aux personnes accompagnées comme aux équipes.
+        </h2>
+        <p class="max-w-2xl text-base text-slate/80 md:text-lg">
+          Nous cultivons un style de présence chaleureux et professionnel, inspiré par le sourire et l'énergie des équipes Relax, pour offrir aux personnes accompagnées des moments de respiration.
+        </p>
       </div>
-      <div class="flex w-full flex-col items-center justify-center gap-6 lg:flex-[2]">
-        <div class="flex w-full flex-col items-center justify-center p-4 text-center text-3xl font-semibold text-primary">
-          <p>Soigner, un devoir, une priorité.</p>
-        </div>
-        <div class="flex w-full flex-col items-center justify-center gap-6 px-4 text-center text-base md:text-lg">
-          <p class="pb-4">
-            Notre souhait profond est de soigner, dans le champs de nos compétences chaque personne qui en a le besoin.
-          </p>
-          <p class="pb-4">
-            Animé par ce devoir, nous sommes aujourd’hui une équipe composée d’infirmiers, médecins, d’aides-soignants et bien
-            d'autres professionnels de la santé publique.
-          </p>
-          <p class="pb-4">
-            Nous voyageons depuis peu et rencontrons les populations sur le terrain pour comprendre leurs enjeux sanitaires et
-            les préoccupations des habitants. Nous partons pendant deux semaines, dans chaque ville, même les plus reculées où
-            nous faisons de la prévention sur des pathologies propres aux pays confrontés aux développements et soignons des
-            maladies qui ne nécessitent pas d’interventions chirurgicales.
-          </p>
-          <p class="pb-4">
-            A terme, nous souhaiterions en collaboration avec les localités, permettre aux pays d’avoir des clés nécessaires pour
-            être auto-suffisants en matière de préventions et de dépistage . Donc d’encourager les initiatives locales et
-            pérenniser l’éducation thérapeutique reçue.
-          </p>
-          <p class="cursor-pointer text-lg text-blue-600 underline" @click="pdf.openPDF">En savoir plus</p>
-          <div class="flex w-full flex-col items-center justify-center gap-8 pt-8 lg:flex-row">
-            <div class="flex w-full max-w-xs flex-col items-center justify-center text-center">
-              <div class="mb-3 flex justify-center">
-                <div class="mx-1 flex h-10 w-8 items-center justify-center border-2 border-primary text-2xl font-bold text-primary">1</div>
-                <div class="mx-1 flex h-10 w-8 items-center justify-center border-2 border-primary text-2xl font-bold text-primary">3</div>
-                <div class="mx-1 flex h-10 w-8 items-center justify-center border-2 border-primary text-2xl font-bold text-primary">3</div>
-                <div class="mx-1 flex h-10 w-8 items-center justify-center border-2 border-primary text-2xl font-bold text-primary">6</div>
-              </div>
-              <p class="text-sm font-semibold tracking-wide">CONSULTATIONS</p>
-            </div>
-
-            <div class="flex w-full max-w-xs flex-col items-center justify-center text-center">
-              <div class="mb-3 flex justify-center">
-                <div class="mx-1 flex h-10 w-8 items-center justify-center border-2 border-primary text-2xl font-bold text-primary">0</div>
-                <div class="mx-1 flex h-10 w-8 items-center justify-center border-2 border-primary text-2xl font-bold text-primary">2</div>
-                <div class="mx-1 flex h-10 w-8 items-center justify-center border-2 border-primary text-2xl font-bold text-primary">5</div>
-                <div class="mx-1 flex h-10 w-8 items-center justify-center border-2 border-primary text-2xl font-bold text-primary">0</div>
-              </div>
-              <p class="text-sm font-semibold tracking-wide">MÉDICAMENTS RÉCOLTÉS</p>
-            </div>
-
-            <div class="flex w-full max-w-xs flex-col items-center justify-center text-center">
-              <div class="mb-3 flex justify-center">
-                <div class="mx-1 flex h-10 w-8 items-center justify-center border-2 border-primary text-2xl font-bold text-primary">0</div>
-                <div class="mx-1 flex h-10 w-8 items-center justify-center border-2 border-primary text-2xl font-bold text-primary">0</div>
-                <div class="mx-1 flex h-10 w-8 items-center justify-center border-2 border-primary text-2xl font-bold text-primary">3</div>
-                <div class="mx-1 flex h-10 w-8 items-center justify-center border-2 border-primary text-2xl font-bold text-primary">5</div>
-              </div>
-              <p class="text-sm font-semibold tracking-wide">SOIGNANTS MOBILISÉS</p>
-            </div>
+      <div class="grid gap-6 sm:grid-cols-2 xl:grid-cols-4">
+        <article
+          v-for="value in values"
+          :key="value.title"
+          class="flex h-full flex-col gap-4 rounded-[var(--radius-md)] bg-white/90 p-6 shadow-[var(--shadow-card)] transition-all duration-200 hover:-translate-y-1 hover:shadow-[var(--shadow-hover)]"
+          :ref="register"
+        >
+          <div class="flex h-14 w-14 items-center justify-center rounded-full bg-primary/10 text-primary shadow-sm">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              class="h-6 w-6"
+              aria-hidden="true"
+            >
+              <path :d="getIconPath(value.icon)" />
+            </svg>
           </div>
-        </div>
+          <h3 class="text-xl font-semibold text-slate">{{ value.title }}</h3>
+          <p class="text-sm leading-relaxed text-slate/75 md:text-base">{{ value.description }}</p>
+        </article>
       </div>
     </div>
   </section>
