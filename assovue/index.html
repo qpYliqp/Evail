@@ -5,6 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" href="/images/logos/evail-icon.png" sizes="16x16" />
     <title>Evail</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Playfair+Display:wght@500;600&display=swap"
+      rel="stylesheet"
+    />
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
       tailwind.config = {
@@ -14,13 +20,40 @@
               primary: '#A92831',
               secondary: '#620D14',
               travel: '#b58632',
+              sand: '#f7ede2',
+              dusk: '#1f2937',
+            },
+            fontFamily: {
+              sans: ['"Manrope"', 'ui-sans-serif', 'system-ui'],
+              display: ['"Playfair Display"', 'serif'],
+            },
+            boxShadow: {
+              glow: '0 25px 60px -20px rgba(169, 40, 49, 0.55)',
+              subtle: '0 20px 35px -28px rgba(15, 23, 42, 0.55)',
+            },
+            backdropBlur: {
+              xs: '2px',
+            },
+            keyframes: {
+              float: {
+                '0%, 100%': { transform: 'translateY(0px)' },
+                '50%': { transform: 'translateY(-12px)' },
+              },
+              fadeUp: {
+                '0%': { opacity: '0', transform: 'translateY(24px)' },
+                '100%': { opacity: '1', transform: 'translateY(0)' },
+              },
+            },
+            animation: {
+              float: 'float 9s ease-in-out infinite',
+              'fade-up': 'fadeUp 0.8s ease-out both',
             },
           },
         },
       };
     </script>
   </head>
-  <body class="min-h-screen bg-white text-black antialiased">
+  <body class="min-h-screen bg-gradient-to-br from-sand via-white to-slate-100 text-dusk antialiased">
     <div id="app"></div>
     <script type="module" src="/src/main.js"></script>
   </body>
